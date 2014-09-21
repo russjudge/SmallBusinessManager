@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Product
+		Id="*" Name="Fox One POS" Language="1033" Version="0.2.11.0"
+		Manufacturer="Russ Judge" UpgradeCode="7c05efa7-7707-4268-aded-e9f28249345a">
+    <Package Comments="Fox One POS"
+						 Description="Fox One POS"
+						 InstallerVersion="405" Compressed="yes" InstallScope="perMachine" />
+
+    <UIRef Id="WixUI_InstallDir" />
+    <Property Id="WIXUI_INSTALLDIR" Value="INSTALLFOLDER" />
+    <WixVariable Id="WixUIBannerBmp" Value="Bitmaps\bannrbmp.bmp" />
+    <WixVariable Id="WixUIDialogBmp" Value="Bitmaps\dlgbmp.bmp" />
+    <!--<WixVariable Id="WixUILicenseRtf" Value="..\SmallBusinessManager\EULA.rtf" />-->
+    <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+
+
+    <Media Id="1" Cabinet="FOXONE.cab" EmbedCab="yes" />
+
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFilesFolder">
+        <Directory Id="RUSSJUDGE" Name="Russ Judge">
+          <Directory Id="INSTALLFOLDER" Name="Fox One POS">
+
+
+            <Component Id="ProductComponent" Guid="419D5D8A-521B-4888-9105-7B14F81F8447">
+              <File
+								Source="..\SmallBusinessManager\bin\$(var.SmallBusinessManager.Configuration)\FoxOnePOS.exe"
+								Name="FoxOnePOS.exe"
+								Id="FOXONEPOS.EXE" >
+                <Shortcut Id="ExeShortcut" Directory="ProgramMenuDir" WorkingDirectory="INSTALLDIR" Name="Fox One POS" Icon="StartMenuIcon.exe" IconIndex="0" />
+              </File>
+              <RegistryValue Root="HKCU" Key="Software\[Manufacturer]\[ProductName]" Type="string" KeyPath="yes" Value="" />
+            </Component>
+            <Component Id="LibraryComponent" Guid="B0868BD1-E74E-4A53-918F-2A5F52BCE88E">
+              <File
+							Source="..\SmallBusinessManager\bin\$(var.SmallBusinessManager.Configuration)\log4net.dll"
+							Name="log4net.dll"
+							Id="LOG4NET.DLL"/>
+
+              <File
+							Source="..\SmallBusinessManager\bin\$(var.SmallBusinessManager.Configuration)\FoxOnePOS.exe.config"
+							Name="FoxOnePOS.exe.config"
+							Id="FOXONEPOS.EXE.CONFIG"/>
+
+              <File
+            Source="..\SmallBusinessManager\bin\$(var.SmallBusinessManager.Configuration)\LumenWorks.Framework.IO.dll"
+            Name="LumenWorks.Framework.IO.dll"
+            Id="LUMENWORKS.FRAMEWORK.IO.DLL"/>
+
+              <File
+           Source="..\SmallBusinessManager\bin\$(var.SmallBusinessManager.Configuration)\PdfSharp-WPF.dll"
+           Name="PdfSharp-WPF.dll"
+           Id="PDFSHARPWPF.DLL"/>
+
+
+              <File
+           Source="..\SmallBusinessManager\bin\$(var.SmallBusinessManager.Configuration)\Readme.txt"
+           Name="Readme.txt"
+           Id="README.TXT"/>
+
+
+              <File
+           Source="..\SmallBusinessManager\bin\$(var.SmallBusinessManager.Configuration)\RussLibrary.Controls.dll"
+           Name="RussLibrary.Controls.dll"
+           Id="RUSSLIBRARY.CONTROLS.DLL"/>
+
+
+              <File
+           Source="..\SmallBusinessManager\bin\$(var.SmallBusinessManager.Configuration)\RussLibrary.dll"
+           Name="RussLibrary.dll"
+           Id="RUSSLIBRARY.DLL"/>
+
+
+
+              <File
+           Source="..\SmallBusinessManager\bin\$(var.SmallBusinessManager.Configuration)\RussLibrary.Helpers.Log4Net.dll"
+           Name="RussLibrary.Helpers.Log4Net.dll"
+           Id="RUSSLIBRARY.HELPERS.LOG4NET.DLL"/>
+
+
+
+              <File
+           Source="..\SmallBusinessManager\bin\$(var.SmallBusinessManager.Configuration)\RussLibrary.Web.dll"
+           Name="RussLibrary.Web.dll"
+           Id="RUSSLIBRARY.WEB.DLL"/>
+
+
+              <File
+           Source="..\SmallBusinessManager\bin\$(var.SmallBusinessManager.Configuration)\SBMLibrary.Controls.dll"
+           Name="SBMLibrary.Controls.dll"
+           Id="SBMLIBRARY.CONTROLS.DLL"/>
+
+
+
+              <File
+           Source="..\SmallBusinessManager\bin\$(var.SmallBusinessManager.Configuration)\SBMLibrary.dll"
+           Name="SBMLibrary.dll"
+           Id="SBMLIBRARY.DLL"/>
+
+              <File
+           Source="..\SmallBusinessManager\bin\$(var.SmallBusinessManager.Configuration)\SharpCompress.dll"
+           Name="SharpCompress.dll"
+           Id="SHARPCOMPRESS.DLL"/>
+
+
+
+
+            </Component>
+          </Directory>
+        </Directory>
+      </Directory>
+
+
+
+      <Directory Id="ProgramMenuFolder">
+
+        <Directory Id="ProgramMenuDir" Name="Fox One POS">
+          <Component Id="ApplicationShortcut" Guid="329387D1-FF41-43A7-8C75-4C3AA757B966">
+            <Shortcut
+              Icon="StartMenuIcon.exe" Id="FoxOnePOS" Name="Fox One POS"
+              WorkingDirectory="INSTALLFOLDER" Target="FOXONEPOS.EXE" />
+            <Shortcut
+              Id="UninstallProduct" Name="Uninstall" Description="Uninstalls Fox One POS"
+              Target="[System64Folder]msiexec.exe" Arguments="/x [ProductCode]" />
+
+            <RemoveFolder Id="ProgramMenuDir" On="uninstall" />
+            <RegistryValue Root="HKCU" Key="Software\[Manufacturer]\[ProductName]" Type="string" Value="" />
+          </Component>
+
+        </Directory>
+      </Directory>
+    </Directory>
+
+
+    <Feature Id="ProductFeature" Title="Fox One POS" Level="1">
+      <ComponentRef Id="ProductComponent" />
+      <ComponentRef Id="LibraryComponent" />
+      <ComponentRef Id="ApplicationShortcut" />
+    </Feature>
+
+
+
+    <Icon
+    Id="StartMenuIcon.exe" SourceFile="..\SmallBusinessManager\bin\$(var.SmallBusinessManager.Configuration)\FoxOnePOS.exe" />
+    <Property Id="ARPPRODUCTION" Value="StartMenuIcon.exe" />
+
+    <UI>
+      <!--<UIRef Id="WixUI_Minimal" />-->
+      <Publish Dialog="ExitDialog"
+            Control="Finish"
+            Event="DoAction"
+            Value="LaunchApplication">WIXUI_EXITDIALOGOPTIONALCHECKBOX = 1 and NOT Installed</Publish>
+    </UI>
+    <Property  Id="WIXUI_EXITDIALOGOPTIONALCHECKBOXTEXT" Value="Launch Fox One POS" />
+    <Property Id="WixShellExecTarget" Value="[#FOXONEPOS.EXE]" />
+    <CustomAction Id="LaunchApplication"
+        BinaryKey="WixCA"
+        DllEntry="WixShellExec"
+        Impersonate="yes" />
+    
+    
+  </Product>
+		
+</Wix>

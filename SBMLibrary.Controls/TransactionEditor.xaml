@@ -1,0 +1,323 @@
+﻿<UserControl x:Class="SBMLibrary.Controls.TransactionEditor"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:ctl="clr-namespace:RussLibrary.Controls;assembly=RussLibrary.Controls"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:helper="clr-namespace:RussLibrary.Helpers;assembly=RussLibrary"
+             xmlns:localConvert="clr-namespace:SBMLibrary.Controls.ValueConverters"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:valueConvert="clr-namespace:RussLibrary.Controls.ValueConverters;assembly=RussLibrary.Controls"
+             Name="uc"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+
+        <localConvert:BreakEvenCostConverter x:Key="BreakEvenCostConverter" />
+        <valueConvert:CurrencyFormatter x:Key="CurrencyFormatter" />
+        <valueConvert:NumericFormatter x:Key="NumericFormatter" />
+        <valueConvert:BoolToVisibilityParameterConverter x:Key="BoolToVisibilityParameterConverter" />
+
+    </UserControl.Resources>
+    <DockPanel>
+        <StackPanel HorizontalAlignment="Right"
+                    DockPanel.Dock="Top"
+                    Orientation="Horizontal">
+
+            <!--  <Button Content="Refresh" Click="OnRefresh" />  -->
+
+            <CheckBox Margin="5,0,15,0"
+                      VerticalAlignment="Center"
+                      Content="Check Transactions in the prior to close day list"
+                      IsChecked="{Binding Path=UsePreCloseDay,
+                                          Mode=TwoWay,
+                                          ElementName=uc}" />
+            <Button Click="OnSave"
+                    Content="Save"
+                    FontSize="18"
+                    FontWeight="Bold" />
+
+        </StackPanel>
+
+
+
+
+        <!--  <ScrollViewer MinHeight="200" DockPanel.Dock="Top" HorizontalScrollBarVisibility="Auto">  -->
+
+        <ListView VerticalAlignment="Stretch" ItemsSource="{Binding Transactions, Mode=OneWay, ElementName=uc}">
+
+            <ListView.View>
+
+                <GridView>
+                    <GridViewColumn Width="70">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <Button Click="OnDelete"
+                                            CommandParameter="{Binding}"
+                                            Content="X" />
+                                    <!--
+                                        <Button Click="OnDetails"
+                                        CommandParameter="{Binding}"
+                                        Content="Details" />
+                                    -->
+                                </StackPanel>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <GridViewColumn x:Name="PART_ProductIDCol" Width="120">
+
+                        <GridViewColumnHeader helper:GridViewColumnHeaderSorter.SortColumnID="ProductID" />
+
+                        <GridViewColumn.HeaderTemplate>
+                            <DataTemplate>
+                                <StackPanel>
+                                    <TextBlock HorizontalAlignment="Center"
+                                               FontWeight="Bold"
+                                               Text="Product ID" />
+
+                                </StackPanel>
+                            </DataTemplate>
+
+                        </GridViewColumn.HeaderTemplate>
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel>
+                                    <TextBox HorizontalAlignment="Center"
+                                             Padding="2"
+                                             Text="{Binding Path=ProductID,
+                                                            Mode=TwoWay}" />
+
+                                </StackPanel>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+
+
+                    <GridViewColumn x:Name="PART_UPCCol" Width="120">
+
+                        <GridViewColumnHeader helper:GridViewColumnHeaderSorter.SortColumnID="UPC" />
+                        <GridViewColumn.HeaderTemplate>
+                            <DataTemplate>
+                                <StackPanel>
+                                    <TextBlock HorizontalAlignment="Center"
+                                               FontWeight="Bold"
+                                               Text="UPC" />
+
+                                </StackPanel>
+                            </DataTemplate>
+
+                        </GridViewColumn.HeaderTemplate>
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel>
+                                    <TextBox Width="{Binding Width,
+                                                             Mode=OneWay,
+                                                             ElementName=PART_UPCCol}"
+                                             HorizontalAlignment="Center"
+                                             Padding="2"
+                                             Text="{Binding Path=UPC,
+                                                            Mode=TwoWay}" />
+
+                                </StackPanel>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+
+
+                    <GridViewColumn x:Name="PART_SKUCol" Width="120">
+
+                        <GridViewColumnHeader helper:GridViewColumnHeaderSorter.SortColumnID="SKU" />
+                        <GridViewColumn.HeaderTemplate>
+                            <DataTemplate>
+                                <StackPanel>
+
+                                    <TextBlock HorizontalAlignment="Center"
+                                               FontWeight="Bold"
+                                               Text="SKU" />
+                                </StackPanel>
+                            </DataTemplate>
+
+                        </GridViewColumn.HeaderTemplate>
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel>
+
+                                    <TextBox Width="{Binding Width,
+                                                             Mode=OneWay,
+                                                             ElementName=PART_SKUCol}"
+                                             HorizontalAlignment="Center"
+                                             Padding="2"
+                                             Text="{Binding Path=SKU,
+                                                            Mode=TwoWay}" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <GridViewColumn x:Name="PART_DateCol" Width="220">
+                        <GridViewColumnHeader helper:GridViewColumnHeaderSorter.SortColumnID="TransactionTime" />
+                        <GridViewColumn.HeaderTemplate>
+                            <DataTemplate>
+                                <StackPanel HorizontalAlignment="Center">
+
+                                    <TextBlock HorizontalAlignment="Center"
+                                               FontWeight="Bold"
+                                               Text="Transaction Time" />
+                                </StackPanel>
+
+                            </DataTemplate>
+
+                        </GridViewColumn.HeaderTemplate>
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+
+
+                                <TextBlock Margin="2,0,2,0"
+                                           HorizontalAlignment="Center"
+                                           Text="{Binding Path=TransactionTime,
+                                                          Mode=TwoWay}" />
+
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+
+
+
+
+
+                    <GridViewColumn x:Name="PART_QuantityCol" Width="120">
+                        <GridViewColumnHeader helper:GridViewColumnHeaderSorter.SortColumnID="Quantity" />
+                        <GridViewColumn.HeaderTemplate>
+                            <DataTemplate>
+                                <StackPanel>
+                                    <TextBlock HorizontalAlignment="Center"
+                                               FontWeight="Bold"
+                                               Text="Quantity" />
+
+                                </StackPanel>
+                            </DataTemplate>
+
+                        </GridViewColumn.HeaderTemplate>
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+
+                                <TextBlock HorizontalAlignment="Right"
+                                           VerticalAlignment="Center"
+                                           FontSize="18"
+                                           FontWeight="Black"
+                                           Foreground="Green"
+                                           Text="{Binding Quantity}" />
+
+
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+
+
+
+                    <GridViewColumn x:Name="PART_MSRPCol" Width="120">
+                        <GridViewColumnHeader helper:GridViewColumnHeaderSorter.SortColumnID="MSRP" />
+                        <GridViewColumn.HeaderTemplate>
+                            <DataTemplate>
+                                <StackPanel HorizontalAlignment="Center">
+
+                                    <TextBlock HorizontalAlignment="Center"
+                                               FontWeight="Bold"
+                                               Text="ReceiptID" />
+                                </StackPanel>
+                            </DataTemplate>
+
+                        </GridViewColumn.HeaderTemplate>
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel HorizontalAlignment="Stretch">
+
+                                    <TextBlock Width="{Binding Width,
+                                                               Mode=OneWay,
+                                                               ElementName=PART_MSRPCol}"
+                                               HorizontalAlignment="Stretch"
+                                               Padding="2"
+                                               Text="{Binding ReceiptID}" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+
+
+                    <GridViewColumn x:Name="PART_DiscountCol" Width="120">
+                        <GridViewColumnHeader helper:GridViewColumnHeaderSorter.SortColumnID="WholeSalePrice" />
+                        <GridViewColumn.HeaderTemplate>
+                            <DataTemplate>
+                                <StackPanel HorizontalAlignment="Center">
+                                    <TextBlock HorizontalAlignment="Center"
+                                               FontWeight="Bold"
+                                               Text="Discount" />
+
+                                </StackPanel>
+                            </DataTemplate>
+
+                        </GridViewColumn.HeaderTemplate>
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel HorizontalAlignment="Stretch">
+                                    <TextBlock Width="{Binding Width,
+                                                               Mode=OneWay,
+                                                               ElementName=PART_DiscountCol}"
+                                               HorizontalAlignment="Stretch"
+                                               Padding="2"
+                                               Text="{Binding Discount,
+                                                              Converter={StaticResource CurrencyFormatter}}" />
+
+                                </StackPanel>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+
+
+
+
+                    <GridViewColumn x:Name="PART_WholeSaleCol" Width="120">
+                        <GridViewColumnHeader helper:GridViewColumnHeaderSorter.SortColumnID="ExportedToWeb" />
+                        <GridViewColumn.HeaderTemplate>
+                            <DataTemplate>
+                                <StackPanel HorizontalAlignment="Center">
+                                    <TextBlock HorizontalAlignment="Center"
+                                               FontWeight="Bold"
+                                               Text="Exported to Web" />
+
+
+                                </StackPanel>
+                            </DataTemplate>
+
+                        </GridViewColumn.HeaderTemplate>
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel HorizontalAlignment="Stretch">
+                                    <!--
+                                        <TextBlock Width="{Binding Width,
+                                        Mode=OneWay,
+                                        ElementName=PART_WholeSaleCol}"
+                                        HorizontalAlignment="Stretch"
+                                        Padding="2"
+                                        Text="{Binding ExportedToWeb}" />
+                                    -->
+                                    <CheckBox IsChecked="{Binding Path=ExportedToWeb, Mode=TwoWay}" />
+
+                                </StackPanel>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <!--  </ScrollViewer>  -->
+    </DockPanel>
+</UserControl>

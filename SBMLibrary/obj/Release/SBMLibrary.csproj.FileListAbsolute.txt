@@ -1,0 +1,11 @@
+E:\Users\Russ\documents\visual studio 2012\Projects\SmallBusinessManager\SBMLibrary\bin\Release\SBMLibrary.dll
+E:\Users\Russ\documents\visual studio 2012\Projects\SmallBusinessManager\SBMLibrary\bin\Release\SBMLibrary.pdb
+E:\Users\Russ\documents\visual studio 2012\Projects\SmallBusinessManager\SBMLibrary\bin\Release\log4net.dll
+E:\Users\Russ\documents\visual studio 2012\Projects\SmallBusinessManager\SBMLibrary\bin\Release\LumenWorks.Framework.IO.dll
+E:\Users\Russ\documents\visual studio 2012\Projects\SmallBusinessManager\SBMLibrary\bin\Release\PdfSharp-WPF.dll
+E:\Users\Russ\documents\visual studio 2012\Projects\SmallBusinessManager\SBMLibrary\bin\Release\RussLibrary.dll
+E:\Users\Russ\documents\visual studio 2012\Projects\SmallBusinessManager\SBMLibrary\bin\Release\RussLibrary.pdb
+E:\Users\Russ\documents\visual studio 2012\Projects\SmallBusinessManager\SBMLibrary\bin\Release\LumenWorks.Framework.IO.xml
+E:\Users\Russ\documents\visual studio 2012\Projects\SmallBusinessManager\SBMLibrary\obj\Release\SBMLibrary.csprojResolveAssemblyReference.cache
+E:\Users\Russ\documents\visual studio 2012\Projects\SmallBusinessManager\SBMLibrary\obj\Release\SBMLibrary.dll
+E:\Users\Russ\documents\visual studio 2012\Projects\SmallBusinessManager\SBMLibrary\obj\Release\SBMLibrary.pdb

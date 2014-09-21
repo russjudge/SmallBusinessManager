@@ -1,0 +1,165 @@
+﻿<Window x:Class="SmallBusinessManager.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:ctl="clr-namespace:SBMLibrary.Controls;assembly=SBMLibrary.Controls"
+        Name="uc"
+        Title="OpenCart POS Client"
+        MinHeight="600"
+        Icon="FoxOneLogo.ico"
+        Loaded="OnLoaded"
+        SizeToContent="Width">
+    <Window.Background>
+        <RadialGradientBrush>
+            <GradientStop Offset="0" Color="#FFEDFFDA" />
+            <GradientStop Offset="1" Color="#FFB3FBBD" />
+        </RadialGradientBrush>
+    </Window.Background>
+
+    <Grid>
+        
+        <TabControl BorderBrush="#FF8A93AC" TabStripPlacement="Left">
+
+            <TabItem>
+                <TabItem.Header>
+                    <TextBlock FontSize="20"
+                               FontWeight="Bold"
+                               Text="Point of Sale" />
+                </TabItem.Header>
+                <GroupBox>
+                    <GroupBox.Background>
+                        <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                            <GradientStop Offset="0" Color="#FFF7E4B0" />
+                            <GradientStop Offset="1" Color="#FFFFF5DB" />
+                        </LinearGradientBrush>
+                    </GroupBox.Background>
+                    <GroupBox.Header>
+                        <TextBlock Background="#FFFFEFA9"
+                                   FontSize="20"
+                                   FontWeight="Bold"
+                                   Text="Point of Sale" />
+                    </GroupBox.Header>
+                    <ctl:PointOfSale x:Name="PART_PointOfSale" Logo="{Binding Logo, ElementName=uc, Mode=OneWay}" />
+                </GroupBox>
+            </TabItem>
+            <!--
+                <TabItem>
+                <TabItem.Header>
+                <TextBlock FontSize="20"
+                FontWeight="Bold"
+                Text="Sales Ledger" />
+                </TabItem.Header>
+                </TabItem>
+            -->
+            <TabItem Name="tbOrderEntry">
+                <TabItem.Header>
+                    <TextBlock Width="200"
+                               HorizontalAlignment="Center"
+                               FontSize="20"
+                               FontWeight="Bold"
+                               Text="   Receive Inventory" />
+                </TabItem.Header>
+                <GroupBox>
+                    <GroupBox.Background>
+                        <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                            <GradientStop Offset="0.771" Color="#FFF35858" />
+                            <GradientStop Offset="0.384" Color="#FFFFE6E6" />
+                        </LinearGradientBrush>
+                    </GroupBox.Background>
+                    <GroupBox.Header>
+                        <TextBlock FontSize="20"
+                                   FontWeight="Bold"
+                                   Text="Receive Inventory">
+                            <TextBlock.Background>
+                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                    <GradientStop Offset="0.445" Color="#FFF9E9D9" />
+                                    <GradientStop Offset="1" Color="#FFF3E5D6" />
+                                </LinearGradientBrush>
+                            </TextBlock.Background>
+                        </TextBlock>
+                    </GroupBox.Header>
+                    <ctl:ReceiveInventory />
+                </GroupBox>
+            </TabItem>
+
+            <TabItem MouseDown="OnMouseDownActiveInventory">
+                <TabItem.Header>
+                    <TextBlock FontSize="20"
+                               FontWeight="Bold"
+                               Text="Active Inventory" />
+                </TabItem.Header>
+                <GroupBox>
+                    <GroupBox.Background>
+                        <RadialGradientBrush>
+                            <GradientStop Offset="0" Color="Black" />
+                            <GradientStop Offset="1" Color="#FF3B9FF3" />
+                        </RadialGradientBrush>
+                    </GroupBox.Background>
+                    <GroupBox.Header>
+                        <TextBlock Background="#FF2E9EFB"
+                                   FontSize="20"
+                                   FontWeight="Bold"
+                                   Text="Active Inventory" />
+                    </GroupBox.Header>
+                    <ctl:ActiveInventoryEditor />
+                </GroupBox>
+
+            </TabItem>
+            <!--
+                <TabItem>
+                <TabItem.Header>
+                <TextBlock FontSize="20"
+                FontWeight="Bold"
+                Text="Inventory Activity" />
+                </TabItem.Header>
+                </TabItem>
+            -->
+            <TabItem>
+                <TabItem.Header>
+                    <TextBlock FontSize="20"
+                               FontWeight="Bold"
+                               Text="Reports" />
+                </TabItem.Header>
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    <TextBlock FontSize="18"
+                               FontWeight="Bold"
+                               Text="Import/Export" />
+                </TabItem.Header>
+                <StackPanel>
+                    <ctl:ImportControl />
+                </StackPanel>
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    <TextBlock FontSize="14"
+                               FontWeight="Bold"
+                               Text="Configuration" />
+
+                </TabItem.Header>
+                <ctl:ConfigurationControl />
+            </TabItem>
+        </TabControl>
+        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Bottom">
+            <!--  PART_PointOfSale  -->
+            <ctl:SalesStatus x:Name="PART_SalesStatus"
+                             TotalCashSales="{Binding Path=TotalCashSales,
+                                                      Mode=TwoWay,
+                                                      ElementName=PART_PointOfSale}"
+                             TotalCheckSales="{Binding Path=TotalCheckSales,
+                                                       Mode=TwoWay,
+                                                       ElementName=PART_PointOfSale}"
+                             TotalCreditSales="{Binding Path=TotalCreditSales,
+                                                        Mode=TwoWay,
+                                                        ElementName=PART_PointOfSale}"
+                             TotalProfit="{Binding Path=TotalProfit,
+                                                   Mode=TwoWay,
+                                                   ElementName=PART_PointOfSale}"
+                             TotalTaxesAssesed="{Binding Path=TotalTaxesAssesed,
+                                                         Mode=TwoWay,
+                                                         ElementName=PART_PointOfSale}" />
+            <Image Width="170" Source="{Binding Logo, Mode=OneWay, ElementName=uc}" />
+        </StackPanel>
+    </Grid>
+</Window>
+

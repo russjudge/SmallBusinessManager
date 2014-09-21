@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Product Id="*" Name="Fox One POS" Language="1033" Version="0.1.0.0" Manufacturer="Russ Judge" UpgradeCode="0f8177fa-0180-483b-97d1-10a8cf1c7e73">
+		<Package
+      Comments="Offline client for OpenCart." Description="Fox One POS"
+      InstallerVersion="405" Compressed="yes" InstallScope="perMachine" />
+
+    <UIRef Id="WixUI_InstallDir" />
+    <Property Id="WIXUI_INSTALLDIR" Value="INSTALLFOLDER" />
+    <WixVariable Id="WixUIBannerBmp" Value="Bitmaps\bannrbmp.bmp" />
+    <WixVariable Id="WixUIDialogBmp" Value="Bitmaps\dlgbmp.bmp" />
+    <WixVariable Id="WixUILicenseRtf" Value="..\SmallBusinessManager\EULA.rtf" />
+    
+    
+		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+
+    <Media Id="1" Cabinet="FoxOnePOS.cab" EmbedCab="yes" />
+		<!--<MediaTemplate />-->
+
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFilesFolder">
+        <Directory Id="RUSSJUDGE" Name="Russ Judge">
+          <Directory Id="INSTALLFOLDER" Name="Fox One POS">
+
+
+            <Component Id="ProductComponent" Guid="9D6B7992-ABF2-41EA-AF63-BCD7FFF56141">
+              <File
+                Source="..\SmallBusinessManager\bin\$(var.SmallBusinessManager.Configuration)\SmallBusinessManager.exe"
+                Name="SmallBusinessManager.exe"
+                Id="SMALLBUSINESSMANAGER.EXE" >
+                <Shortcut Id="ExeShortcut" Directory="ProgramMenuDir" WorkingDirectory="INSTALLDIR" Name="Fox One POS" Icon="StartMenuIcon.exe" IconIndex="0" />
+              </File>
+              <RegistryValue Root="HKCU" Key="Software\[Manufacturer]\[ProductName]" Type="string" KeyPath="yes" Value="" />
+            </Component>
+            <Component Id="LibraryComponent" Guid="C3298D1D-4BFA-4094-BB45-DE177CE72C48">
+              
+              
+              <File Source="..\SmallBusinessManager\bin\$(var.SmallBusinessManager.Configuration)\SmallBusinessManager.exe.config" Name="SmallBusinessManager.exe.config" Id="SMALLBUSINESSMANAGER.EXE.CONFIG"  />
+              <File Source="..\SmallBusinessManager\bin\$(var.SmallBusinessManager.Configuration)\RussLibrary.Controls.dll" Name="RussLibrary.Controls.dll" Id="RUSSLIBRARY.CONTROLS.DLL"/>
+              <File Source="..\SmallBusinessManager\bin\$(var.SmallBusinessManager.Configuration)\RussLibrary.dll" Name="RussLibrary.dll" Id="RUSSLIBRARY.DLL"/>
+              <File Source="..\SmallBusinessManager\bin\$(var.SmallBusinessManager.Configuration)\SBMLibrary.dll" Name="SBMLibrary.dll" Id="SBMLIBRARY.DLL"/>
+              <File Source="..\SmallBusinessManager\bin\$(var.SmallBusinessManager.Configuration)\SBMLibrary.Controls.dll" Name="SBMLibrary.Controls.dll" Id="SBMLIBRARY.CONTROLS.DLL"/>
+
+            </Component>
+          </Directory>
+        </Directory>
+      </Directory>
+
+      <Directory Id="ProgramMenuFolder">
+
+        <Directory Id="ProgramMenuDir" Name="Fox One POS">
+          <Component Id="ApplicationShortcut" Guid="DEE07484-2F46-4532-B76C-9F024BF4712C">
+            <Shortcut
+              Icon="StartMenuIcon.exe" Id="FoxOnePOS" Name="Fox One POS"
+              Description="OpenCart Offline POS Client"
+              WorkingDirectory="INSTALLFOLDER" Target="SMALLBUSINESSMANAGER.EXE" />
+            <Shortcut
+              Id="UninstallProduct" Name="Uninstall" Description="Uninstalls Fox One POS"
+              Target="[System64Folder]msiexec.exe" Arguments="/x [ProductCode]" />
+
+            <RemoveFolder Id="ProgramMenuDir" On="uninstall" />
+            <RegistryValue Root="HKCU" Key="Software\[Manufacturer]\[ProductName]" Type="string" Value="" />
+          </Component>
+
+        </Directory>
+      </Directory>
+
+    </Directory>
+
+
+    
+    <Feature Id="ProductFeature" Title="FoxOnePOSInstaller" Level="1">
+			<ComponentRef Id="ProductComponents" />
+      <ComponentRef Id="LibraryComponent" />
+      <ComponentRef Id="ApplicationShortcut" />
+		</Feature>
+
+
+
+
+    <Icon
+      Id="StartMenuIcon.exe" SourceFile="..\SmallBusinessManager\bin\$(var.SmallBusinessManager.Configuration)\SmallBusinessManager.exe" />
+    <Property Id="ARPPRODUCTION" Value="StartMenuIcon.exe" />
+
+    <UI>
+      
+      <Publish Dialog="ExitDialog"
+            Control="Finish"
+            Event="DoAction"
+            Value="LaunchApplication">WIXUI_EXITDIALOGOPTIONALCHECKBOX = 1 and NOT Installed</Publish>
+    </UI>
+    <Property  Id="WIXUI_EXITDIALOGOPTIONALCHECKBOXTEXT" Value="Launch Fox One POS Mod Loader" />
+    <Property Id="WixShellExecTarget" Value="[#SMALLBUSINESSMANAGER.EXE]" />
+    <CustomAction Id="LaunchApplication"
+        BinaryKey="WixCA"
+        DllEntry="WixShellExec"
+        Impersonate="yes" />
+
+    
+
+
+  </Product>
+
+	<!--<Fragment>
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="ProgramFilesFolder">
+				<Directory Id="INSTALLFOLDER" Name="FoxOnePOSInstaller" />
+			</Directory>
+		</Directory>
+	</Fragment>-->
+
+	<!--<Fragment>
+		<ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+		
+		</ComponentGroup>
+	</Fragment>-->
+</Wix>
+<!-- TODO: Remove the comments around this Component element and the ComponentRef below in order to add resources to this installer. -->
+<!-- <Component Id="ProductComponent"> -->
+<!-- TODO: Insert files, registry keys, and other resources here. -->
+<!-- </Component> -->

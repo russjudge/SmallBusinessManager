@@ -1,0 +1,6 @@
+E:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\FoxOnePOSSetup\bin\Debug\FoxOnePOSSetup.msi
+E:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\FoxOnePOSSetup\bin\Debug\FoxOnePOSSetup.wixpdb
+obj\Debug\Product.wixobj
+obj\Debug\FoxOnePOSSetup.wixproj.BindContentsFileListnull.txt
+obj\Debug\FoxOnePOSSetup.wixproj.BindOutputsFileListnull.txt
+obj\Debug\FoxOnePOSSetup.wixproj.BindBuiltOutputsFileListnull.txt

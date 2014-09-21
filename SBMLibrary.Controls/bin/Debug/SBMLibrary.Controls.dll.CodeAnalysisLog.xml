@@ -1,0 +1,523 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="c:\program files (x86)\microsoft visual studio 11.0\team tools\static analysis tools\fxcop\Xml\CodeAnalysisReport.xsl"?>
+<FxCopReport Version="11.0">
+ <Namespaces>
+  <Namespace Name="SBMLibrary.Controls">
+   <Messages>
+    <Message Id="SBM" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-05-31 20:45:41Z" FixCategory="Breaking">
+     <Issue Name="Namespace" Certainty="85" Level="Error">Correct the casing of 'SBM' in namespace name 'SBMLibrary.Controls' by changing it to 'Sbm'.</Issue>
+    </Message>
+   </Messages>
+  </Namespace>
+  <Namespace Name="SBMLibrary.Controls.ValueConverters">
+   <Messages>
+    <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Status="Active" Created="2014-05-31 20:45:41Z" FixCategory="Breaking">
+     <Issue Certainty="50" Level="Warning">Consider merging the types defined in 'SBMLibrary.Controls.ValueConverters' with another namespace.</Issue>
+    </Message>
+    <Message Id="SBM" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-05-31 20:45:41Z" FixCategory="Breaking">
+     <Issue Name="Namespace" Certainty="85" Level="Error">Correct the casing of 'SBM' in namespace name 'SBMLibrary.Controls.ValueConverters' by changing it to 'Sbm'.</Issue>
+    </Message>
+   </Messages>
+  </Namespace>
+ </Namespaces>
+ <Targets>
+  <Target Name="E:\Users\Russ\documents\visual studio 2012\Projects\SmallBusinessManager\SBMLibrary.Controls\bin\Debug\SBMLibrary.Controls.dll">
+   <Modules>
+    <Module Name="sbmlibrary.controls.dll">
+     <Messages>
+      <Message Id="SBM" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-05-31 20:45:41Z" FixCategory="Breaking">
+       <Issue Name="Assembly" Certainty="85" Level="Error">Correct the casing of 'SBM' in assembly name 'SBMLibrary.Controls.dll' by changing it to 'Sbm'.</Issue>
+      </Message>
+     </Messages>
+     <Namespaces>
+      <Namespace Name="SBMLibrary.Controls">
+       <Types>
+        <Type Name="ActiveInventoryEditor" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#FilterSKU" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="SKU" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-05-31 20:45:41Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary.Controls" File="ActiveInventoryEditor.xaml.cs" Line="98">Correct the casing of 'SKU' in member name 'ActiveInventoryEditor.FilterSKU' by changing it to 'Sku'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#FilterSKUProperty" Kind="Field" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="SKU" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-05-31 20:45:41Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error">Correct the casing of 'SKU' in member name 'ActiveInventoryEditor.FilterSKUProperty' by changing it to 'Sku'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#FilterUPC" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="UPC" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-05-31 20:45:41Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary.Controls" File="ActiveInventoryEditor.xaml.cs" Line="78">Correct the casing of 'UPC' in member name 'ActiveInventoryEditor.FilterUPC' by changing it to 'Upc'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#FilterUPCProperty" Kind="Field" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="UPC" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-05-31 20:45:41Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error">Correct the casing of 'UPC' in member name 'ActiveInventoryEditor.FilterUPCProperty' by changing it to 'Upc'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="ConfigurationControl" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#OnResetTransactionActivity(System.Object,System.Windows.RoutedEventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message Id="System.Windows.MessageBox.Show(System.String,System.String,System.Windows.MessageBoxButton,System.Windows.MessageBoxImage)" TypeName="Do not pass literals as localized parameters" Category="Microsoft.Globalization" CheckId="CA1303" Status="Active" Created="2014-05-31 20:45:41Z" FixCategory="DependsOnFix">
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary.Controls" File="ConfigurationControl.xaml.cs" Line="258">Method 'ConfigurationControl.OnResetTransactionActivity(object, RoutedEventArgs)' passes a literal string as parameter 'caption' of a call to 'MessageBox.Show(string, string, MessageBoxButton, MessageBoxImage)'. Retrieve the following string(s) from a resource table instead: "Fucking Clobberation".</Issue>
+            </Message>
+            <Message Id="Clobberation" TypeName="Literals should be spelled correctly" Category="Microsoft.Naming" CheckId="CA2204" Status="Active" Created="2014-05-31 20:45:41Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary.Controls" File="ConfigurationControl.xaml.cs" Line="258">Correct the spelling of the unrecognized token 'Clobberation' in the literal '"Fucking Clobberation"'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#OpenCartAdminURL" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="URL" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-05-31 20:45:41Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary.Controls" File="ConfigurationControl.xaml.cs" Line="127">Correct the casing of 'URL' in member name 'ConfigurationControl.OpenCartAdminURL' by changing it to 'Url'.</Issue>
+            </Message>
+            <Message TypeName="UriPropertiesShouldNotBeStrings" Category="Microsoft.Design" CheckId="CA1056" Status="Active" Created="2014-05-31 20:45:41Z" FixCategory="Breaking">
+             <Issue Certainty="75" Level="Error" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary.Controls" File="ConfigurationControl.xaml.cs" Line="127">Change the type of property 'ConfigurationControl.OpenCartAdminURL' from string to System.Uri.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#OpenCartAdminURLProperty" Kind="Field" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="URL" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-05-31 20:45:41Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error">Correct the casing of 'URL' in member name 'ConfigurationControl.OpenCartAdminURLProperty' by changing it to 'Url'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#OpenCartUsername" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="Username" TypeName="CompoundWordsShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1702" Status="Active" Created="2014-05-31 20:45:41Z" FixCategory="Breaking">
+             <Issue Name="MemberShouldBeCompoundWord" Certainty="80" Level="Error" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary.Controls" File="ConfigurationControl.xaml.cs" Line="158">The discrete term 'Username' in member name 'ConfigurationControl.OpenCartUsername' should be expressed as a compound word, 'UserName'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#OpenCartUsernameProperty" Kind="Field" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="Username" TypeName="CompoundWordsShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1702" Status="Active" Created="2014-05-31 20:45:41Z" FixCategory="Breaking">
+             <Issue Name="MemberShouldBeCompoundWord" Certainty="80" Level="Error">The discrete term 'Username' in member name 'ConfigurationControl.OpenCartUsernameProperty' should be expressed as a compound word, 'UserName'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#StationID" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="ID" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-05-31 20:45:41Z" FixCategory="Breaking">
+             <Issue Name="MemberAbbreviation" Certainty="85" Level="Error" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary.Controls" File="ConfigurationControl.xaml.cs" Line="242">Correct the casing of 'ID' in member name 'ConfigurationControl.StationID' by changing it to 'Id'. 'Id' is an abbreviation and therefore is not subject to acronym casing guidelines.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#StationIDProperty" Kind="Field" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="ID" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-05-31 20:45:41Z" FixCategory="Breaking">
+             <Issue Name="MemberAbbreviation" Certainty="85" Level="Error">Correct the casing of 'ID' in member name 'ConfigurationControl.StationIDProperty' by changing it to 'Id'. 'Id' is an abbreviation and therefore is not subject to acronym casing guidelines.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="ImportControl" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#Import(SBMLibrary.ActiveInventoryCollection,System.Boolean,System.Boolean,System.Boolean)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2014-05-31 20:45:41Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary.Controls" File="ImportControl.xaml.cs" Line="151">The 'this' parameter (or 'Me' in Visual Basic) of 'ImportControl.Import(ActiveInventoryCollection, bool, bool, bool)' is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#OnClear(System.Object,System.Windows.RoutedEventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message Id="System.Windows.MessageBox.Show(System.String,System.String,System.Windows.MessageBoxButton,System.Windows.MessageBoxImage,System.Windows.MessageBoxResult)" TypeName="Do not pass literals as localized parameters" Category="Microsoft.Globalization" CheckId="CA1303" Status="Active" Created="2014-05-31 20:45:41Z" FixCategory="DependsOnFix">
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary.Controls" File="ImportControl.xaml.cs" Line="260">Method 'ImportControl.OnClear(object, RoutedEventArgs)' passes a literal string as parameter 'caption' of a call to 'MessageBox.Show(string, string, MessageBoxButton, MessageBoxImage, MessageBoxResult)'. Retrieve the following string(s) from a resource table instead: "Clear Inventory".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary.Controls" File="ImportControl.xaml.cs" Line="262">Method 'ImportControl.OnClear(object, RoutedEventArgs)' passes a literal string as parameter 'caption' of a call to 'MessageBox.Show(string, string, MessageBoxButton, MessageBoxImage, MessageBoxResult)'. Retrieve the following string(s) from a resource table instead: "Clear Inventory".</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#OnExportChanges(System.Object,System.Windows.RoutedEventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message Id="System.Windows.MessageBox.Show(System.String,System.String)" TypeName="Do not pass literals as localized parameters" Category="Microsoft.Globalization" CheckId="CA1303" Status="Active" Created="2014-05-31 20:45:41Z" FixCategory="DependsOnFix">
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary.Controls" File="ImportControl.xaml.cs" Line="251">Method 'ImportControl.OnExportChanges(object, RoutedEventArgs)' passes a literal string as parameter 'caption' of a call to 'MessageBox.Show(string, string)'. Retrieve the following string(s) from a resource table instead: "Export".</Issue>
+            </Message>
+            <Message Id="System.Windows.MessageBox.Show(System.String,System.String,System.Windows.MessageBoxButton,System.Windows.MessageBoxImage)" TypeName="Do not pass literals as localized parameters" Category="Microsoft.Globalization" CheckId="CA1303" Status="Active" Created="2014-05-31 20:45:41Z" FixCategory="DependsOnFix">
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary.Controls" File="ImportControl.xaml.cs" Line="247">Method 'ImportControl.OnExportChanges(object, RoutedEventArgs)' passes a literal string as parameter 'caption' of a call to 'MessageBox.Show(string, string, MessageBoxButton, MessageBoxImage)'. Retrieve the following string(s) from a resource table instead: "Export".</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#OnExportConfig(System.Object,System.Windows.RoutedEventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Active" Created="2014-05-31 20:45:41Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalError" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary.Controls" File="ImportControl.xaml.cs" Line="303">Modify 'ImportControl.OnExportConfig(object, RoutedEventArgs)' to catch a more specific exception than 'object' or rethrow the exception.</Issue>
+            </Message>
+            <Message Id="System.String.EndsWith(System.String)" TypeName="SpecifyStringComparison" Category="Microsoft.Globalization" CheckId="CA1307" Status="Active" Created="2014-05-31 20:45:41Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary.Controls" File="ImportControl.xaml.cs" Line="297">Because the behavior of 'string.EndsWith(string)' could vary based on the current user's locale settings, replace this call in 'ImportControl.OnExportConfig(object, RoutedEventArgs)' with a call to 'string.EndsWith(string, StringComparison)'. If the result of 'string.EndsWith(string, StringComparison)' will be displayed to the user, such as when sorting a list of items for display in a list box, specify 'StringComparison.CurrentCulture' or 'StringComparison.CurrentCultureIgnoreCase' as the 'StringComparison' parameter. If comparing case-insensitive identifiers, such as file paths, environment variables, or registry keys and values, specify 'StringComparison.OrdinalIgnoreCase'. Otherwise, if comparing case-sensitive identifiers, specify 'StringComparison.Ordinal'.</Issue>
+             <Issue Certainty="95" Level="Error" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary.Controls" File="ImportControl.xaml.cs" Line="297">Because the behavior of 'string.EndsWith(string)' could vary based on the current user's locale settings, replace this call in 'ImportControl.OnExportConfig(object, RoutedEventArgs)' with a call to 'string.EndsWith(string, StringComparison)'. If the result of 'string.EndsWith(string, StringComparison)' will be displayed to the user, such as when sorting a list of items for display in a list box, specify 'StringComparison.CurrentCulture' or 'StringComparison.CurrentCultureIgnoreCase' as the 'StringComparison' parameter. If comparing case-insensitive identifiers, such as file paths, environment variables, or registry keys and values, specify 'StringComparison.OrdinalIgnoreCase'. Otherwise, if comparing case-sensitive identifiers, specify 'StringComparison.Ordinal'.</Issue>
+             <Issue Certainty="95" Level="Error" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary.Controls" File="ImportControl.xaml.cs" Line="297">Because the behavior of 'string.EndsWith(string)' could vary based on the current user's locale settings, replace this call in 'ImportControl.OnExportConfig(object, RoutedEventArgs)' with a call to 'string.EndsWith(string, StringComparison)'. If the result of 'string.EndsWith(string, StringComparison)' will be displayed to the user, such as when sorting a list of items for display in a list box, specify 'StringComparison.CurrentCulture' or 'StringComparison.CurrentCultureIgnoreCase' as the 'StringComparison' parameter. If comparing case-insensitive identifiers, such as file paths, environment variables, or registry keys and values, specify 'StringComparison.OrdinalIgnoreCase'. Otherwise, if comparing case-sensitive identifiers, specify 'StringComparison.Ordinal'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#OnWebsiteExportChanges(System.Object,System.Windows.RoutedEventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message Id="System.Windows.MessageBox.Show(System.String,System.String,System.Windows.MessageBoxButton,System.Windows.MessageBoxImage)" TypeName="Do not pass literals as localized parameters" Category="Microsoft.Globalization" CheckId="CA1303" Status="Active" Created="2014-05-31 20:45:41Z" FixCategory="DependsOnFix">
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary.Controls" File="ImportControl.xaml.cs" Line="317">Method 'ImportControl.OnWebsiteExportChanges(object, RoutedEventArgs)' passes a literal string as parameter 'caption' of a call to 'MessageBox.Show(string, string, MessageBoxButton, MessageBoxImage)'. Retrieve the following string(s) from a resource table instead: "OpenCart Quantity Update".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary.Controls" File="ImportControl.xaml.cs" Line="322">Method 'ImportControl.OnWebsiteExportChanges(object, RoutedEventArgs)' passes a literal string as parameter 'caption' of a call to 'MessageBox.Show(string, string, MessageBoxButton, MessageBoxImage)'. Retrieve the following string(s) from a resource table instead: "OpenCart Quantity Update".</Issue>
+            </Message>
+            <Message Id="OpenCart" TypeName="Literals should be spelled correctly" Category="Microsoft.Naming" CheckId="CA2204" Status="Active" Created="2014-05-31 20:45:41Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary.Controls" File="ImportControl.xaml.cs" Line="317">Correct the spelling of the unrecognized token 'OpenCart' in the literal '"OpenCart Quantity Update"'.</Issue>
+             <Issue Certainty="75" Level="Warning" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary.Controls" File="ImportControl.xaml.cs" Line="322">Correct the spelling of the unrecognized token 'OpenCart' in the literal '"OpenCart Quantity Update"'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="PointOfSale" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#OnCancel(System.Object,System.Windows.RoutedEventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message Id="System.Windows.MessageBox.Show(System.String,System.String,System.Windows.MessageBoxButton,System.Windows.MessageBoxImage)" TypeName="Do not pass literals as localized parameters" Category="Microsoft.Globalization" CheckId="CA1303" Status="Active" Created="2014-05-31 20:45:41Z" FixCategory="DependsOnFix">
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary.Controls" File="PointOfSale.xaml.cs" Line="671">Method 'PointOfSale.OnCancel(object, RoutedEventArgs)' passes a literal string as parameter 'caption' of a call to 'MessageBox.Show(string, string, MessageBoxButton, MessageBoxImage)'. Retrieve the following string(s) from a resource table instead: "Cancel Sale".</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#OnDiscountAmountChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)" Kind="Method" Static="True" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message Id="e" TypeName="ReviewUnusedParameters" Category="Microsoft.Usage" CheckId="CA1801" Status="Active" Created="2014-05-31 20:45:41Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary.Controls" File="PointOfSale.xaml.cs" Line="141">Parameter 'e' of 'PointOfSale.OnDiscountAmountChanged(DependencyObject, DependencyPropertyChangedEventArgs)' is never used. Remove the parameter or use it in the method body.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#OnPost(System.Object,System.Windows.RoutedEventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message Id="System.Windows.MessageBox.Show(System.String,System.String,System.Windows.MessageBoxButton,System.Windows.MessageBoxImage)" TypeName="Do not pass literals as localized parameters" Category="Microsoft.Globalization" CheckId="CA1303" Status="Active" Created="2014-05-31 20:45:41Z" FixCategory="DependsOnFix">
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary.Controls" File="PointOfSale.xaml.cs" Line="379">Method 'PointOfSale.OnPost(object, RoutedEventArgs)' passes a literal string as parameter 'caption' of a call to 'MessageBox.Show(string, string, MessageBoxButton, MessageBoxImage)'. Retrieve the following string(s) from a resource table instead: "Completing Sale".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary.Controls" File="PointOfSale.xaml.cs" Line="381">Method 'PointOfSale.OnPost(object, RoutedEventArgs)' passes a literal string as parameter 'caption' of a call to 'MessageBox.Show(string, string, MessageBoxButton, MessageBoxImage)'. Retrieve the following string(s) from a resource table instead: "Sale Canceled".</Issue>
+            </Message>
+            <Message Id="System.Decimal.ToString(System.String)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2014-05-31 20:45:41Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary.Controls" File="PointOfSale.xaml.cs" Line="379">Because the behavior of 'decimal.ToString(string)' could vary based on the current user's locale settings, replace this call in 'PointOfSale.OnPost(object, RoutedEventArgs)' with a call to 'decimal.ToString(string, IFormatProvider)'. If the result of 'decimal.ToString(string, IFormatProvider)' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary.Controls" File="PointOfSale.xaml.cs" Line="379">Because the behavior of 'decimal.ToString(string)' could vary based on the current user's locale settings, replace this call in 'PointOfSale.OnPost(object, RoutedEventArgs)' with a call to 'decimal.ToString(string, IFormatProvider)'. If the result of 'decimal.ToString(string, IFormatProvider)' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+            <Message Id="System.String.Format(System.String,System.Object,System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2014-05-31 20:45:41Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary.Controls" File="PointOfSale.xaml.cs" Line="379">Because the behavior of 'string.Format(string, object, object)' could vary based on the current user's locale settings, replace this call in 'PointOfSale.OnPost(object, RoutedEventArgs)' with a call to 'string.Format(IFormatProvider, string, params object[])'. If the result of 'string.Format(IFormatProvider, string, params object[])' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ReceiptID" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="ID" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-05-31 20:45:41Z" FixCategory="Breaking">
+             <Issue Name="MemberAbbreviation" Certainty="85" Level="Error" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary.Controls" File="PointOfSale.xaml.cs" Line="566">Correct the casing of 'ID' in member name 'PointOfSale.ReceiptID' by changing it to 'Id'. 'Id' is an abbreviation and therefore is not subject to acronym casing guidelines.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ReceiptIDProperty" Kind="Field" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="ID" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-05-31 20:45:41Z" FixCategory="Breaking">
+             <Issue Name="MemberAbbreviation" Certainty="85" Level="Error">Correct the casing of 'ID' in member name 'PointOfSale.ReceiptIDProperty' by changing it to 'Id'. 'Id' is an abbreviation and therefore is not subject to acronym casing guidelines.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#TotalTaxesAssesed" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="Assesed" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2014-05-31 20:45:41Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="75" Level="CriticalWarning" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary.Controls" File="PointOfSale.xaml.cs" Line="509">Correct the spelling of 'Assesed' in member name 'PointOfSale.TotalTaxesAssesed' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#TotalTaxesAssesedProperty" Kind="Field" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="Assesed" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2014-05-31 20:45:41Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="75" Level="CriticalWarning">Correct the spelling of 'Assesed' in member name 'PointOfSale.TotalTaxesAssesedProperty' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="PricingModelEditor" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#Models" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2014-05-31 20:45:41Z" FixCategory="DependsOnFix">
+             <Issue Certainty="95" Level="Warning" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary.Controls" File="PricingModelEditor.xaml.cs" Line="33">The 'this' parameter (or 'Me' in Visual Basic) of 'PricingModelEditor.Models' is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="ReceiveInventory" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#ReceiptID" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="ID" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-05-31 20:45:41Z" FixCategory="Breaking">
+             <Issue Name="MemberAbbreviation" Certainty="85" Level="Error" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary.Controls" File="ReceiveInventory.xaml.cs" Line="38">Correct the casing of 'ID' in member name 'ReceiveInventory.ReceiptID' by changing it to 'Id'. 'Id' is an abbreviation and therefore is not subject to acronym casing guidelines.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ReceiptIDProperty" Kind="Field" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="ID" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-05-31 20:45:41Z" FixCategory="Breaking">
+             <Issue Name="MemberAbbreviation" Certainty="85" Level="Error">Correct the casing of 'ID' in member name 'ReceiveInventory.ReceiptIDProperty' by changing it to 'Id'. 'Id' is an abbreviation and therefore is not subject to acronym casing guidelines.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#RefreshTotals()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2014-05-31 20:45:41Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary.Controls" File="ReceiveInventory.xaml.cs" Line="139">The 'this' parameter (or 'Me' in Visual Basic) of 'ReceiveInventory.RefreshTotals()' is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ResetPage()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2014-05-31 20:45:41Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary.Controls" File="ReceiveInventory.xaml.cs" Line="209">The 'this' parameter (or 'Me' in Visual Basic) of 'ReceiveInventory.ResetPage()' is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="SalesStatus" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#TotalTaxesAssesed" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="Assesed" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2014-05-31 20:45:41Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="75" Level="CriticalWarning" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary.Controls" File="SalesStatus.xaml.cs" Line="143">Correct the spelling of 'Assesed' in member name 'SalesStatus.TotalTaxesAssesed' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#TotalTaxesAssesedProperty" Kind="Field" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="Assesed" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2014-05-31 20:45:41Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="75" Level="CriticalWarning">Correct the spelling of 'Assesed' in member name 'SalesStatus.TotalTaxesAssesedProperty' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="TransactionReporting" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#OnExportList(System.Object,System.Windows.RoutedEventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message Id="System.Decimal.ToString" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2014-05-31 20:45:41Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary.Controls" File="TransactionReporting.xaml.cs" Line="171">Because the behavior of 'decimal.ToString()' could vary based on the current user's locale settings, replace this call in 'TransactionReporting.OnExportList(object, RoutedEventArgs)' with a call to 'decimal.ToString(IFormatProvider)'. If the result of 'decimal.ToString(IFormatProvider)' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary.Controls" File="TransactionReporting.xaml.cs" Line="171">Because the behavior of 'decimal.ToString()' could vary based on the current user's locale settings, replace this call in 'TransactionReporting.OnExportList(object, RoutedEventArgs)' with a call to 'decimal.ToString(IFormatProvider)'. If the result of 'decimal.ToString(IFormatProvider)' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary.Controls" File="TransactionReporting.xaml.cs" Line="171">Because the behavior of 'decimal.ToString()' could vary based on the current user's locale settings, replace this call in 'TransactionReporting.OnExportList(object, RoutedEventArgs)' with a call to 'decimal.ToString(IFormatProvider)'. If the result of 'decimal.ToString(IFormatProvider)' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+            <Message Id="System.Int32.ToString" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2014-05-31 20:45:41Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary.Controls" File="TransactionReporting.xaml.cs" Line="171">Because the behavior of 'int.ToString()' could vary based on the current user's locale settings, replace this call in 'TransactionReporting.OnExportList(object, RoutedEventArgs)' with a call to 'int.ToString(IFormatProvider)'. If the result of 'int.ToString(IFormatProvider)' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary.Controls" File="TransactionReporting.xaml.cs" Line="171">Because the behavior of 'int.ToString()' could vary based on the current user's locale settings, replace this call in 'TransactionReporting.OnExportList(object, RoutedEventArgs)' with a call to 'int.ToString(IFormatProvider)'. If the result of 'int.ToString(IFormatProvider)' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#OnSubmitReport(System.Object,System.Windows.RoutedEventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Active" Created="2014-05-31 20:45:41Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalError" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary.Controls" File="TransactionReporting.xaml.cs" Line="111">Modify 'TransactionReporting.OnSubmitReport(object, RoutedEventArgs)' to catch a more specific exception than 'object' or rethrow the exception.</Issue>
+            </Message>
+            <Message Id="System.DateTime.Parse(System.String)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2014-05-31 20:45:41Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternate" Certainty="95" Level="Error" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary.Controls" File="TransactionReporting.xaml.cs" Line="109">Because the behavior of 'DateTime.Parse(string)' could vary based on the current user's locale settings, replace this call in 'TransactionReporting.OnSubmitReport(object, RoutedEventArgs)' with a call to 'DateTime.Parse(string, IFormatProvider)'. If the result of 'DateTime.Parse(string, IFormatProvider)' will be based on input from the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will based on input stored and accessed by software, such as when it is loaded from disk or from a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ShowUnexportedOnly" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="Unexported" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2014-05-31 20:45:41Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="75" Level="CriticalWarning" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary.Controls" File="TransactionReporting.xaml.cs" Line="75">Correct the spelling of 'Unexported' in member name 'TransactionReporting.ShowUnexportedOnly' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ShowUnexportedOnlyProperty" Kind="Field" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="Unexported" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2014-05-31 20:45:41Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="75" Level="CriticalWarning">Correct the spelling of 'Unexported' in member name 'TransactionReporting.ShowUnexportedOnlyProperty' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+      <Namespace Name="SBMLibrary.Controls.ValueConverters">
+       <Types>
+        <Type Name="BreakEvenCostConverter" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message Id="BreakEven" TypeName="CompoundWordsShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1702" Status="Active" Created="2014-05-31 20:45:41Z" FixCategory="Breaking">
+           <Issue Name="TypeShouldBeDiscreteTerm" Certainty="80" Level="Error">The compound word 'BreakEven' in type name 'BreakEvenCostConverter' exists as a discrete term. If your usage is intended to be single word, case it as 'Breakeven'.</Issue>
+          </Message>
+         </Messages>
+        </Type>
+        <Type Name="OrderEntryTotal" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="System.Decimal.ToString(System.String,System.IFormatProvider)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2014-05-31 20:45:41Z" FixCategory="NonBreaking">
+             <Issue Name="UICultureString" Certainty="95" Level="Error" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary.Controls\ValueConverters" File="OrderEntryTotal.cs" Line="19">'OrderEntryTotal.Convert(object, Type, object, CultureInfo)' passes 'CultureInfo.CurrentUICulture' as the 'IFormatProvider' parameter to 'decimal.ToString(string, IFormatProvider)'. This property returns a culture that is inappropriate for formatting methods. If the result of 'decimal.ToString(string, IFormatProvider)' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+     </Namespaces>
+    </Module>
+   </Modules>
+  </Target>
+ </Targets>
+ <Rules>
+  <Rule TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020">
+   <Name>Avoid namespaces with few types</Name>
+   <Description>A namespace should generally have more than five types.</Description>
+   <Resolution Name="Default">Consider merging the types defined in '{0}' with another namespace.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182130(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="50">Warning</MessageLevel>
+   <File Name="designrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="CompoundWordsShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1702">
+   <Name>Compound words should be cased correctly</Name>
+   <Description>Avoid creating compound words from terms which exist in the dictionary as discrete terms. Do not create a compound word such as 'StopWatch' or 'PopUp'. These terms are recognized in the dictionary and should be cased as 'Stopwatch' and 'Popup'.</Description>
+   <Resolution Name="MemberShouldBeCompoundWord">The discrete term '{0}' in member name {1} should be expressed as a compound word, '{2}'.</Resolution>
+   <Resolution Name="TypeShouldBeDiscreteTerm">The compound word '{0}' in type name {1} exists as a discrete term. If your usage is intended to be single word, case it as '{2}'.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/bb264474(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="80">Error</MessageLevel>
+   <File Name="namingrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="Do not pass literals as localized parameters" Category="Microsoft.Globalization" CheckId="CA1303">
+   <Name>Do not pass literals as localized parameters</Name>
+   <Description>Literal strings that are embedded in source code are difficult to localize. Avoid passing literal strings as arguments in circumstances where a localized string is generally expected.</Description>
+   <Resolution Name="KnownValue">Method {0} passes a literal string as parameter '{1}' of a call to {2}. Retrieve the following string(s) from a resource table instead: {3}.</Resolution>
+   <Owner>RuleOwner</Owner>
+   <Url>http://msdn.microsoft.com/library/ms182187(VS.100).aspx</Url>
+   <Email />
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="dataflowrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031">
+   <Name>Do not catch general exception types</Name>
+   <Description>You should not catch Exception or SystemException. Catching generic exception types can hide run-time problems from the library user, and can complicate debugging. You should catch only those exceptions that you can handle gracefully.</Description>
+   <Resolution Name="Default">Modify {0} to catch a more specific exception than {1} or rethrow the exception.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182137(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">CriticalError</MessageLevel>
+   <File Name="designrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709">
+   <Name>Identifiers should be cased correctly</Name>
+   <Description>Type, namespace, and member identifiers are Pascal-cased. Parameter identifiers are camel-cased. Two letter acronyms within these identifiers should be upper-cased, for example, use System.IO instead of System.Io. Acronyms of three or more letters should be Pascal-cased, for example, use System.Xml instead of System.XML. The pascal-casing convention capitalizes the first letter of each word, as in BackColor. The camel-casing convention formats the first letter of the first word in lowercase and capitalizes the first letter of all subsequent words, as in backgroundColor. Although it may be common practice for some two letter acronyms to not be fully capitalized, violations of this rule should not be excluded for this reason. For example, 'DbConnection', is common but incorrect; use DBConnection. A violation of this rule might be required for compatibility with existing, non-managed symbol schemes. In general, however, these symbols should not be visible outside the assembly that uses them.</Description>
+   <Resolution Name="Assembly">Correct the casing of '{0}' in assembly name {1} by changing it to '{2}'.</Resolution>
+   <Resolution Name="Member">Correct the casing of '{0}' in member name {1} by changing it to '{2}'.</Resolution>
+   <Resolution Name="MemberAbbreviation">Correct the casing of '{0}' in member name {1} by changing it to '{2}'. '{2}' is an abbreviation and therefore is not subject to acronym casing guidelines.</Resolution>
+   <Resolution Name="Namespace">Correct the casing of '{0}' in namespace name '{1}' by changing it to '{2}'.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182240(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="85">Error</MessageLevel>
+   <File Name="namingrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704">
+   <Name>Identifiers should be spelled correctly</Name>
+   <Description>The individual words that make up an identifier should not be abbreviated and should be spelled correctly. If this rule generates a false positive on a term that should be recognized, add the word to the FxCop custom dictionary.</Description>
+   <Resolution Name="Member">Correct the spelling of '{0}' in member name {1} or remove it entirely if it represents any sort of Hungarian notation.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/bb264492(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="75">CriticalWarning</MessageLevel>
+   <File Name="namingrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="Literals should be spelled correctly" Category="Microsoft.Naming" CheckId="CA2204">
+   <Name>Literals should be spelled correctly</Name>
+   <Description>This rule parses the literal string into words, tokenizing compound words, and checks the spelling of each word/token.</Description>
+   <Resolution Name="Default">Correct the spelling of the unrecognized token '{0}' in the literal '{1}'.</Resolution>
+   <Owner>RuleOwner</Owner>
+   <Url>http://msdn.microsoft.com/library/bb264488(VS.100).aspx</Url>
+   <Email />
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="dataflowrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822">
+   <Name>Mark members as static</Name>
+   <Description>Methods which do not access instance data or call instance methods can be marked as static (Shared in Visual Basic). After doing so, the compiler will emit non-virtual call sites to these members which will prevent a check at runtime for each call that ensures the current object pointer is non-null. This can result in a measurable performance gain for performance-sensitive code. In some cases, the failure to access the current object instance represents a correctness issue.</Description>
+   <Resolution Name="Default">The 'this' parameter (or 'Me' in Visual Basic) of {0} is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms245046(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Warning</MessageLevel>
+   <File Name="performancerules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="ReviewUnusedParameters" Category="Microsoft.Usage" CheckId="CA1801">
+   <Name>Review unused parameters</Name>
+   <Description>Review parameters in non-virtual methods that are not used in the method body to ensure no correctness exists around failure to access them. Unused parameters incur maintenance and performance costs. Sometimes a violation of this rule can point to an implementation bug in the method (i.e. the parameter should actually have been used in the method body). Exclude warnings of this rule if the parameter has to exist because of backward compatibility.</Description>
+   <Resolution Name="Default">Parameter {0} of {1} is never used. Remove the parameter or use it in the method body.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182268(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Warning</MessageLevel>
+   <File Name="usagerules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305">
+   <Name>Specify IFormatProvider</Name>
+   <Description>If an overload exists that takes an IFormatProvider argument, it should always be called in favor of an overload that does not. Some methods in the runtime convert a value to or from a string representation and take a string parameter that contains one or more characters, called format specifiers, which indicate how the value is to be converted. If the meaning of the format specifier varies by culture, a formatting object supplies the actual characters used in the string representation. In scenarios where sorting and comparison behavior should never change between cultures, specify CultureInfo.InvariantCulture, otherwise, specify CultureInfo.CurrentCulture.</Description>
+   <Resolution Name="IFormatProviderAlternate">Because the behavior of {0} could vary based on the current user's locale settings, replace this call in {1} with a call to {2}. If the result of {2} will be based on input from the user, specify {3} as the 'IFormatProvider' parameter. Otherwise, if the result will based on input stored and accessed by software, such as when it is loaded from disk or from a database, specify {4}.</Resolution>
+   <Resolution Name="IFormatProviderAlternateString">Because the behavior of {0} could vary based on the current user's locale settings, replace this call in {1} with a call to {2}. If the result of {2} will be displayed to the user, specify {3} as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify {4}.</Resolution>
+   <Resolution Name="UICultureString">{0} passes {1} as the 'IFormatProvider' parameter to {2}. This property returns a culture that is inappropriate for formatting methods. If the result of {2} will be displayed to the user, specify {3} as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify {4}.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182190(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="globalizationrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="SpecifyStringComparison" Category="Microsoft.Globalization" CheckId="CA1307">
+   <Name>Specify StringComparison</Name>
+   <Description>If an overload exists that takes a StringComparison argument, it should always be called in favor of an overload that does not.</Description>
+   <Resolution Name="Default">Because the behavior of {0} could vary based on the current user's locale settings, replace this call in {1} with a call to {2}. If the result of {2} will be displayed to the user, such as when sorting a list of items for display in a list box, specify 'StringComparison.CurrentCulture' or 'StringComparison.CurrentCultureIgnoreCase' as the 'StringComparison' parameter. If comparing case-insensitive identifiers, such as file paths, environment variables, or registry keys and values, specify 'StringComparison.OrdinalIgnoreCase'. Otherwise, if comparing case-sensitive identifiers, specify 'StringComparison.Ordinal'.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/bb386080(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="globalizationrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="UriPropertiesShouldNotBeStrings" Category="Microsoft.Design" CheckId="CA1056">
+   <Name>URI properties should not be strings</Name>
+   <Description>If a property name contains "uri" or "url" or "urn" and it's typed as string, it should be changed to System.Uri.</Description>
+   <Resolution Name="Default">Change the type of property {0} from string to System.Uri.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182175(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="75">Error</MessageLevel>
+   <File Name="designrules.dll" Version="11.0.0.0" />
+  </Rule>
+ </Rules>
+ <Localized>
+  <String Key="Category">Category</String>
+  <String Key="Certainty">Certainty</String>
+  <String Key="CollapseAll">Collapse All</String>
+  <String Key="CheckId">Check Id</String>
+  <String Key="Error">Error</String>
+  <String Key="Errors">error(s)</String>
+  <String Key="ExpandAll">Expand All</String>
+  <String Key="Help">Help</String>
+  <String Key="Line">Line</String>
+  <String Key="Messages">message(s)</String>
+  <String Key="LocationNotStoredInPdb">[Location not stored in Pdb]</String>
+  <String Key="Project">Project</String>
+  <String Key="Resolution">Resolution</String>
+  <String Key="Rule">Rule</String>
+  <String Key="RuleFile">Rule File</String>
+  <String Key="RuleDescription">Rule Description</String>
+  <String Key="Source">Source</String>
+  <String Key="Status">Status</String>
+  <String Key="Target">Target</String>
+  <String Key="Warning">Warning</String>
+  <String Key="Warnings">warning(s)</String>
+  <String Key="ReportTitle">Code Analysis Report</String>
+ </Localized>
+</FxCopReport>

@@ -1,0 +1,697 @@
+﻿<UserControl x:Class="SBMLibrary.Controls.TransactionReporting"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:helper="clr-namespace:RussLibrary.Helpers;assembly=RussLibrary"
+             xmlns:localConvert="clr-namespace:SBMLibrary.Controls.ValueConverters"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:valueConvert="clr-namespace:RussLibrary.Controls.ValueConverters;assembly=RussLibrary.Controls"
+             Name="uc"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <valueConvert:NumericAdjuster x:Key="NumericAdjuster" />
+        <valueConvert:CurrencyFormatter x:Key="CurrencyFormatter" />
+        <valueConvert:BoolToVisibilityParameterConverter x:Key="BoolToVisibilityParameterConverter" />
+    </UserControl.Resources>
+    <DockPanel>
+
+        <StackPanel HorizontalAlignment="Right"
+                    DockPanel.Dock="Top"
+                    Orientation="Horizontal">
+            <Button Click="OnExportList"
+                    Content="Export this list"
+                    ToolTip="Export to CSV" />
+            <CheckBox VerticalAlignment="Center"
+                      Content="Show unexported only"
+                      IsChecked="{Binding Path=ShowUnexportedOnly,
+                                          Mode=TwoWay,
+                                          ElementName=uc}"
+                      Padding="5,0,5,0" />
+            <Button Click="OnSave" Content="Save Changes" />
+            <Label Content="Report Date:"
+                   FontWeight="Bold"
+                   Visibility="{Binding ShowUnexportedOnly,
+                                        Mode=OneWay,
+                                        ElementName=uc,
+                                        Converter={StaticResource BoolToVisibilityParameterConverter},
+                                        ConverterParameter='Collapsed|Visible'}" />
+            <TextBox Width="100"
+                     Text="{Binding Path=ReportDate,
+                                    Mode=TwoWay,
+                                    ElementName=uc}"
+                     Visibility="{Binding ShowUnexportedOnly,
+                                          Mode=OneWay,
+                                          ElementName=uc,
+                                          Converter={StaticResource BoolToVisibilityParameterConverter},
+                                          ConverterParameter='Collapsed|Visible'}" />
+            <Button Click="OnSubmitReport" Content="Submit" />
+        </StackPanel>
+        <!--  Height="{Binding Height, Mode=OneWay, ElementName=uc, Converter={StaticResource NumericAdjuster}, ConverterParameter='DIVIDE|2'}"  -->
+
+        <ScrollViewer MinHeight="200"
+                      DockPanel.Dock="Top"
+                      HorizontalScrollBarVisibility="Auto">
+            <GroupBox Header="Transactions">
+                <ListView VerticalAlignment="Stretch" ItemsSource="{Binding Transactions, Mode=OneWay, ElementName=uc}">
+
+                    <ListView.View>
+
+                        <GridView>
+
+
+                            <GridViewColumn x:Name="PART_ProductIDCol" Width="120">
+
+                                <GridViewColumnHeader helper:GridViewColumnHeaderSorter.SortColumnID="ProductID" />
+
+                                <GridViewColumn.HeaderTemplate>
+                                    <DataTemplate>
+                                        <StackPanel>
+                                            <TextBlock HorizontalAlignment="Center"
+                                                       FontWeight="Bold"
+                                                       Text="Product ID" />
+
+                                        </StackPanel>
+                                    </DataTemplate>
+
+                                </GridViewColumn.HeaderTemplate>
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <StackPanel>
+                                            <TextBox HorizontalAlignment="Center"
+                                                     Padding="2"
+                                                     Text="{Binding Path=ProductID,
+                                                                    Mode=TwoWay}" />
+
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+
+
+
+                            <GridViewColumn x:Name="PART_UPCCol" Width="120">
+
+                                <GridViewColumnHeader helper:GridViewColumnHeaderSorter.SortColumnID="UPC" />
+                                <GridViewColumn.HeaderTemplate>
+                                    <DataTemplate>
+                                        <StackPanel>
+                                            <TextBlock HorizontalAlignment="Center"
+                                                       FontWeight="Bold"
+                                                       Text="UPC" />
+
+                                        </StackPanel>
+                                    </DataTemplate>
+
+                                </GridViewColumn.HeaderTemplate>
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <StackPanel>
+                                            <TextBox Width="{Binding Width,
+                                                                     Mode=OneWay,
+                                                                     ElementName=PART_UPCCol}"
+                                                     HorizontalAlignment="Center"
+                                                     Padding="2"
+                                                     Text="{Binding Path=UPC,
+                                                                    Mode=TwoWay}" />
+
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+
+
+
+                            <GridViewColumn x:Name="PART_SKUCol" Width="120">
+
+                                <GridViewColumnHeader helper:GridViewColumnHeaderSorter.SortColumnID="SKU" />
+                                <GridViewColumn.HeaderTemplate>
+                                    <DataTemplate>
+                                        <StackPanel>
+
+                                            <TextBlock HorizontalAlignment="Center"
+                                                       FontWeight="Bold"
+                                                       Text="SKU" />
+                                        </StackPanel>
+                                    </DataTemplate>
+
+                                </GridViewColumn.HeaderTemplate>
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <StackPanel>
+
+                                            <TextBox Width="{Binding Width,
+                                                                     Mode=OneWay,
+                                                                     ElementName=PART_SKUCol}"
+                                                     HorizontalAlignment="Center"
+                                                     Padding="2"
+                                                     Text="{Binding Path=SKU,
+                                                                    Mode=TwoWay}" />
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+
+                            <GridViewColumn x:Name="PART_DateCol" Width="220">
+                                <GridViewColumnHeader helper:GridViewColumnHeaderSorter.SortColumnID="TransactionTime" />
+                                <GridViewColumn.HeaderTemplate>
+                                    <DataTemplate>
+                                        <StackPanel HorizontalAlignment="Center">
+
+                                            <TextBlock HorizontalAlignment="Center"
+                                                       FontWeight="Bold"
+                                                       Text="Transaction Time" />
+                                        </StackPanel>
+
+                                    </DataTemplate>
+
+                                </GridViewColumn.HeaderTemplate>
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+
+
+                                        <TextBlock Margin="2,0,2,0"
+                                                   HorizontalAlignment="Center"
+                                                   Text="{Binding Path=TransactionTime,
+                                                                  Mode=TwoWay}" />
+
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+
+
+
+
+
+
+                            <GridViewColumn x:Name="PART_QuantityCol" Width="120">
+                                <GridViewColumnHeader helper:GridViewColumnHeaderSorter.SortColumnID="Quantity" />
+                                <GridViewColumn.HeaderTemplate>
+                                    <DataTemplate>
+                                        <StackPanel>
+                                            <TextBlock HorizontalAlignment="Center"
+                                                       FontWeight="Bold"
+                                                       Text="Quantity" />
+
+                                        </StackPanel>
+                                    </DataTemplate>
+
+                                </GridViewColumn.HeaderTemplate>
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+
+                                        <TextBlock HorizontalAlignment="Right"
+                                                   VerticalAlignment="Center"
+                                                   FontSize="18"
+                                                   FontWeight="Black"
+                                                   Foreground="Green"
+                                                   Text="{Binding Quantity}" />
+
+
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+
+
+
+
+                            <GridViewColumn x:Name="PART_MSRPCol" Width="120">
+                                <GridViewColumnHeader helper:GridViewColumnHeaderSorter.SortColumnID="MSRP" />
+                                <GridViewColumn.HeaderTemplate>
+                                    <DataTemplate>
+                                        <StackPanel HorizontalAlignment="Center">
+
+                                            <TextBlock HorizontalAlignment="Center"
+                                                       FontWeight="Bold"
+                                                       Text="ReceiptID" />
+                                        </StackPanel>
+                                    </DataTemplate>
+
+                                </GridViewColumn.HeaderTemplate>
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <StackPanel HorizontalAlignment="Stretch">
+
+                                            <TextBlock Width="{Binding Width,
+                                                                       Mode=OneWay,
+                                                                       ElementName=PART_MSRPCol}"
+                                                       HorizontalAlignment="Stretch"
+                                                       Padding="2"
+                                                       Text="{Binding ReceiptID}" />
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+
+
+
+                            <GridViewColumn x:Name="PART_DiscountCol" Width="120">
+                                <GridViewColumnHeader helper:GridViewColumnHeaderSorter.SortColumnID="WholeSalePrice" />
+                                <GridViewColumn.HeaderTemplate>
+                                    <DataTemplate>
+                                        <StackPanel HorizontalAlignment="Center">
+                                            <TextBlock HorizontalAlignment="Center"
+                                                       FontWeight="Bold"
+                                                       Text="Discount" />
+
+                                        </StackPanel>
+                                    </DataTemplate>
+
+                                </GridViewColumn.HeaderTemplate>
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <StackPanel HorizontalAlignment="Stretch">
+                                            <TextBlock Width="{Binding Width,
+                                                                       Mode=OneWay,
+                                                                       ElementName=PART_DiscountCol}"
+                                                       HorizontalAlignment="Stretch"
+                                                       Padding="2"
+                                                       Text="{Binding Discount,
+                                                                      Converter={StaticResource CurrencyFormatter}}" />
+
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+
+
+
+
+
+                            <GridViewColumn x:Name="PART_WholeSaleCol" Width="120">
+                                <GridViewColumnHeader helper:GridViewColumnHeaderSorter.SortColumnID="ExportedToWeb" />
+                                <GridViewColumn.HeaderTemplate>
+                                    <DataTemplate>
+                                        <StackPanel HorizontalAlignment="Center">
+                                            <TextBlock HorizontalAlignment="Center"
+                                                       FontWeight="Bold"
+                                                       Text="Exported to Web" />
+
+                                        </StackPanel>
+                                    </DataTemplate>
+
+                                </GridViewColumn.HeaderTemplate>
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <StackPanel HorizontalAlignment="Stretch">
+                                            <CheckBox IsChecked="{Binding Path=ExportedToWeb, Mode=TwoWay}" />
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+
+
+                            <GridViewColumn x:Name="PART_WholeSale3Col" Width="120">
+                                <GridViewColumnHeader helper:GridViewColumnHeaderSorter.SortColumnID="TransactionAmount" />
+                                <GridViewColumn.HeaderTemplate>
+                                    <DataTemplate>
+                                        <StackPanel HorizontalAlignment="Center">
+                                            <TextBlock HorizontalAlignment="Center"
+                                                       FontWeight="Bold"
+                                                       Text="TransactionAmount" />
+
+                                        </StackPanel>
+                                    </DataTemplate>
+
+                                </GridViewColumn.HeaderTemplate>
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <StackPanel HorizontalAlignment="Stretch">
+                                            <TextBlock Width="{Binding Width,
+                                                                       Mode=OneWay,
+                                                                       ElementName=PART_WholeSale3Col}"
+                                                       HorizontalAlignment="Stretch"
+                                                       Padding="2"
+                                                       Text="{Binding TransactionAmount,
+                                                                      Converter={StaticResource CurrencyFormatter}}" />
+
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+
+
+
+                            <GridViewColumn x:Name="PART_WholeSale5Col" Width="120">
+                                <GridViewColumnHeader helper:GridViewColumnHeaderSorter.SortColumnID="SellingPriceEach" />
+                                <GridViewColumn.HeaderTemplate>
+                                    <DataTemplate>
+                                        <StackPanel HorizontalAlignment="Center">
+                                            <TextBlock HorizontalAlignment="Center"
+                                                       FontWeight="Bold"
+                                                       Text="SellingPriceEach" />
+
+                                        </StackPanel>
+                                    </DataTemplate>
+
+                                </GridViewColumn.HeaderTemplate>
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <StackPanel HorizontalAlignment="Stretch">
+                                            <TextBlock Width="{Binding Width,
+                                                                       Mode=OneWay,
+                                                                       ElementName=PART_WholeSale5Col}"
+                                                       HorizontalAlignment="Stretch"
+                                                       Padding="2"
+                                                       Text="{Binding SellingPriceEach,
+                                                                      Converter={StaticResource CurrencyFormatter}}" />
+
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+
+
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </GroupBox>
+        </ScrollViewer>
+        <!--
+            <ScrollViewer DockPanel.Dock="Top" HorizontalScrollBarVisibility="Auto">
+            <GroupBox Header="Finance data">
+            
+            <ListView VerticalAlignment="Stretch"
+            ItemsSource="{Binding Finances,
+            Mode=OneWay,
+            ElementName=uc}"
+            >
+            
+            <ListView.View>
+            
+            <GridView>
+            
+            
+            <GridViewColumn x:Name="PART_ProductID2Col" Width="120">
+            
+            <GridViewColumnHeader helper:GridViewColumnHeaderSorter.SortColumnID="TransactionDateTime" />
+            
+            <GridViewColumn.HeaderTemplate>
+            <DataTemplate>
+            <StackPanel>
+            <TextBlock HorizontalAlignment="Center"
+            FontWeight="Bold"
+            Text="Transaction Time" />
+            
+            </StackPanel>
+            </DataTemplate>
+            
+            </GridViewColumn.HeaderTemplate>
+            <GridViewColumn.CellTemplate>
+            <DataTemplate>
+            <StackPanel>
+            <TextBox HorizontalAlignment="Center"
+            Padding="2"
+            Text="{Binding Path=TransactionDateTime,
+            Mode=TwoWay}" />
+            
+            </StackPanel>
+            </DataTemplate>
+            </GridViewColumn.CellTemplate>
+            </GridViewColumn>
+            
+            
+            
+            <GridViewColumn x:Name="PART_UPC2Col" Width="120">
+            
+            <GridViewColumnHeader helper:GridViewColumnHeaderSorter.SortColumnID="ReceiptID" />
+            <GridViewColumn.HeaderTemplate>
+            <DataTemplate>
+            <StackPanel>
+            <TextBlock HorizontalAlignment="Center"
+            FontWeight="Bold"
+            Text="ReceiptID" />
+            
+            </StackPanel>
+            </DataTemplate>
+            
+            </GridViewColumn.HeaderTemplate>
+            <GridViewColumn.CellTemplate>
+            <DataTemplate>
+            <StackPanel>
+            <TextBox Width="{Binding Width,
+            Mode=OneWay,
+            ElementName=PART_UPC2Col}"
+            HorizontalAlignment="Center"
+            Padding="2"
+            Text="{Binding Path=ReceiptID,
+            Mode=TwoWay}" />
+            
+            </StackPanel>
+            </DataTemplate>
+            </GridViewColumn.CellTemplate>
+            </GridViewColumn>
+            
+            
+            
+            <GridViewColumn x:Name="PART_SKU2Col" Width="120">
+            
+            <GridViewColumnHeader helper:GridViewColumnHeaderSorter.SortColumnID="TotalSale" />
+            <GridViewColumn.HeaderTemplate>
+            <DataTemplate>
+            <StackPanel>
+            
+            <TextBlock HorizontalAlignment="Center"
+            FontWeight="Bold"
+            Text="Total Sale" />
+            </StackPanel>
+            </DataTemplate>
+            
+            </GridViewColumn.HeaderTemplate>
+            <GridViewColumn.CellTemplate>
+            <DataTemplate>
+            <StackPanel>
+            
+            <TextBox Width="{Binding Width,
+            Mode=OneWay,
+            ElementName=PART_SKU2Col}"
+            HorizontalAlignment="Center"
+            Padding="2"
+            Text="{Binding TotalSale,
+            Mode=OneWay,
+            Converter={StaticResource CurrencyFormatter}}" />
+            </StackPanel>
+            </DataTemplate>
+            </GridViewColumn.CellTemplate>
+            </GridViewColumn>
+            
+            <GridViewColumn x:Name="PART_Date2Col" Width="220">
+            <GridViewColumnHeader helper:GridViewColumnHeaderSorter.SortColumnID="TotalTax" />
+            <GridViewColumn.HeaderTemplate>
+            <DataTemplate>
+            <StackPanel HorizontalAlignment="Center">
+            
+            <TextBlock HorizontalAlignment="Center"
+            FontWeight="Bold"
+            Text="TotalTax" />
+            </StackPanel>
+            
+            </DataTemplate>
+            
+            </GridViewColumn.HeaderTemplate>
+            <GridViewColumn.CellTemplate>
+            <DataTemplate>
+            
+            
+            <TextBlock HorizontalAlignment="Center"
+            Margin="2,0,2,0"
+            Text="{Binding TotalTax,
+            Mode=OneWay,
+            Converter={StaticResource CurrencyFormatter}}" />
+            
+            </DataTemplate>
+            </GridViewColumn.CellTemplate>
+            </GridViewColumn>
+            
+            
+            
+            
+            
+            
+            <GridViewColumn x:Name="PART_Quantity2Col" Width="120">
+            <GridViewColumnHeader helper:GridViewColumnHeaderSorter.SortColumnID="TotalCash" />
+            <GridViewColumn.HeaderTemplate>
+            <DataTemplate>
+            <StackPanel>
+            <TextBlock HorizontalAlignment="Center"
+            FontWeight="Bold"
+            Text="Total Cash" />
+            
+            </StackPanel>
+            </DataTemplate>
+            
+            </GridViewColumn.HeaderTemplate>
+            <GridViewColumn.CellTemplate>
+            <DataTemplate>
+            
+            <TextBlock HorizontalAlignment="Right"
+            VerticalAlignment="Center"
+            FontSize="18"
+            FontWeight="Black"
+            Foreground="Green"
+            Text="{Binding TotalCash,
+            Converter={StaticResource CurrencyFormatter}}" />
+            
+            
+            </DataTemplate>
+            </GridViewColumn.CellTemplate>
+            </GridViewColumn>
+            
+            
+            
+            
+            <GridViewColumn x:Name="PART_MSRP2Col" Width="120">
+            <GridViewColumnHeader helper:GridViewColumnHeaderSorter.SortColumnID="TotalCredit" />
+            <GridViewColumn.HeaderTemplate>
+            <DataTemplate>
+            <StackPanel HorizontalAlignment="Center">
+            
+            <TextBlock HorizontalAlignment="Center"
+            FontWeight="Bold"
+            Text="Total Credit" />
+            </StackPanel>
+            </DataTemplate>
+            
+            </GridViewColumn.HeaderTemplate>
+            <GridViewColumn.CellTemplate>
+            <DataTemplate>
+            <StackPanel HorizontalAlignment="Stretch">
+            
+            <TextBlock Width="{Binding Width,
+            Mode=OneWay,
+            ElementName=PART_MSRP2Col}"
+            HorizontalAlignment="Stretch"
+            Padding="2"
+            Text="{Binding TotalCredit,
+            Converter={StaticResource CurrencyFormatter}}" />
+            </StackPanel>
+            </DataTemplate>
+            </GridViewColumn.CellTemplate>
+            </GridViewColumn>
+            
+            
+            
+            <GridViewColumn x:Name="PART_Discount2Col" Width="120">
+            <GridViewColumnHeader helper:GridViewColumnHeaderSorter.SortColumnID="TotalCheck" />
+            <GridViewColumn.HeaderTemplate>
+            <DataTemplate>
+            <StackPanel HorizontalAlignment="Center">
+            <TextBlock HorizontalAlignment="Center"
+            FontWeight="Bold"
+            Text="Total Check" />
+            
+            </StackPanel>
+            </DataTemplate>
+            
+            </GridViewColumn.HeaderTemplate>
+            <GridViewColumn.CellTemplate>
+            <DataTemplate>
+            <StackPanel HorizontalAlignment="Stretch">
+            <TextBlock Width="{Binding Width,
+            Mode=OneWay,
+            ElementName=PART_Discount2Col}"
+            HorizontalAlignment="Stretch"
+            Padding="2"
+            Text="{Binding TotalCheck,
+            Converter={StaticResource CurrencyFormatter}}" />
+            
+            </StackPanel>
+            </DataTemplate>
+            </GridViewColumn.CellTemplate>
+            </GridViewColumn>
+            
+            
+            
+            
+            
+            <GridViewColumn x:Name="PART_WholeSale2Col" Width="120">
+            <GridViewColumnHeader helper:GridViewColumnHeaderSorter.SortColumnID="DiscountAmount" />
+            <GridViewColumn.HeaderTemplate>
+            <DataTemplate>
+            <StackPanel HorizontalAlignment="Center">
+            <TextBlock HorizontalAlignment="Center"
+            FontWeight="Bold"
+            Text="Discount Amount" />
+            
+            </StackPanel>
+            </DataTemplate>
+            
+            </GridViewColumn.HeaderTemplate>
+            <GridViewColumn.CellTemplate>
+            <DataTemplate>
+            <StackPanel HorizontalAlignment="Stretch">
+            <TextBlock Width="{Binding Width,
+            Mode=OneWay,
+            ElementName=PART_WholeSale2Col}"
+            HorizontalAlignment="Stretch"
+            Padding="2"
+            Text="{Binding DiscountAmount, Converter={StaticResource CurrencyFormatter}}" />
+            
+            </StackPanel>
+            </DataTemplate>
+            </GridViewColumn.CellTemplate>
+            </GridViewColumn>
+            
+            
+            <GridViewColumn x:Name="PART_ProductCountCol" Width="120">
+            <GridViewColumnHeader helper:GridViewColumnHeaderSorter.SortColumnID="ProductCount" />
+            <GridViewColumn.HeaderTemplate>
+            <DataTemplate>
+            <StackPanel HorizontalAlignment="Center">
+            <TextBlock HorizontalAlignment="Center"
+            FontWeight="Bold"
+            Text="Product Count" />
+            
+            </StackPanel>
+            </DataTemplate>
+            
+            </GridViewColumn.HeaderTemplate>
+            <GridViewColumn.CellTemplate>
+            <DataTemplate>
+            <StackPanel HorizontalAlignment="Stretch">
+            <TextBlock Width="{Binding Width,
+            Mode=OneWay,
+            ElementName=PART_ProductCountCol}"
+            HorizontalAlignment="Stretch"
+            Padding="2"
+            Text="{Binding ProductCount}" />
+            
+            </StackPanel>
+            </DataTemplate>
+            </GridViewColumn.CellTemplate>
+            </GridViewColumn>
+            
+            <GridViewColumn x:Name="PART_ProfitLossCol" Width="120">
+            <GridViewColumnHeader helper:GridViewColumnHeaderSorter.SortColumnID="ProfitLoss" />
+            <GridViewColumn.HeaderTemplate>
+            <DataTemplate>
+            <StackPanel HorizontalAlignment="Center">
+            <TextBlock HorizontalAlignment="Center"
+            FontWeight="Bold"
+            Text="Profit Loss" />
+            
+            </StackPanel>
+            </DataTemplate>
+            
+            </GridViewColumn.HeaderTemplate>
+            <GridViewColumn.CellTemplate>
+            <DataTemplate>
+            <StackPanel HorizontalAlignment="Stretch">
+            <TextBlock Width="{Binding Width,
+            Mode=OneWay,
+            ElementName=PART_ProfitLossCol}"
+            HorizontalAlignment="Stretch"
+            Padding="2"
+            Text="{Binding ProfitLoss, Converter={StaticResource CurrencyFormatter}}" />
+            
+            </StackPanel>
+            </DataTemplate>
+            </GridViewColumn.CellTemplate>
+            </GridViewColumn>
+            </GridView>
+            </ListView.View>
+            </ListView>
+            </GroupBox>
+            </ScrollViewer>
+        -->
+    </DockPanel>
+</UserControl>

@@ -1,0 +1,6 @@
+E:\Users\Russ\documents\visual studio 2012\Projects\SmallBusinessManager\SBMConfiguration\bin\Debug\SBMConfiguration.exe
+E:\Users\Russ\documents\visual studio 2012\Projects\SmallBusinessManager\SBMConfiguration\bin\Debug\SBMConfiguration.pdb
+E:\Users\Russ\documents\visual studio 2012\Projects\SmallBusinessManager\SBMConfiguration\obj\Debug\SBMConfiguration.Properties.Resources.resources
+E:\Users\Russ\documents\visual studio 2012\Projects\SmallBusinessManager\SBMConfiguration\obj\Debug\SBMConfiguration.csproj.GenerateResource.Cache
+E:\Users\Russ\documents\visual studio 2012\Projects\SmallBusinessManager\SBMConfiguration\obj\Debug\SBMConfiguration.exe
+E:\Users\Russ\documents\visual studio 2012\Projects\SmallBusinessManager\SBMConfiguration\obj\Debug\SBMConfiguration.pdb

@@ -1,0 +1,2 @@
+E:\Users\Russ\documents\visual studio 2012\Projects\SmallBusinessManager\FoxOnePOSSetup\bin\Debug\FoxOnePOSSetup.msi
+E:\Users\Russ\documents\visual studio 2012\Projects\SmallBusinessManager\FoxOnePOSSetup\bin\Debug\FoxOnePOSSetup.wixpdb

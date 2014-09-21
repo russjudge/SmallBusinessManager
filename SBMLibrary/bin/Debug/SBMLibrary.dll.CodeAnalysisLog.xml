@@ -1,0 +1,884 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="c:\program files (x86)\microsoft visual studio 11.0\team tools\static analysis tools\fxcop\Xml\CodeAnalysisReport.xsl"?>
+<FxCopReport Version="11.0">
+ <Namespaces>
+  <Namespace Name="SBMLibrary">
+   <Messages>
+    <Message Id="SBM" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="Breaking">
+     <Issue Name="Namespace" Certainty="85" Level="Error">Correct the casing of 'SBM' in namespace name 'SBMLibrary' by changing it to 'Sbm'.</Issue>
+    </Message>
+   </Messages>
+  </Namespace>
+ </Namespaces>
+ <Targets>
+  <Target Name="E:\Users\Russ\documents\visual studio 2012\Projects\SmallBusinessManager\SBMLibrary\bin\Debug\SBMLibrary.dll">
+   <Modules>
+    <Module Name="sbmlibrary.dll">
+     <Messages>
+      <Message Id="SBM" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="Breaking">
+       <Issue Name="Assembly" Certainty="85" Level="Error">Correct the casing of 'SBM' in assembly name 'SBMLibrary.dll' by changing it to 'Sbm'.</Issue>
+      </Message>
+     </Messages>
+     <Namespaces>
+      <Namespace Name="SBMLibrary">
+       <Types>
+        <Type Name="ActiveInventoryCollection" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#GetByProductID(System.Int32)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="ByProduct" TypeName="CompoundWordsShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1702" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="Breaking">
+             <Issue Name="MemberShouldBeDiscreteTerm" Certainty="80" Level="Error" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="ActiveInventoryCollection.cs" Line="595">The compound word 'ByProduct' in member name 'ActiveInventoryCollection.GetByProductID(int)' exists as a discrete term. If your usage is intended to be single word, case it as 'Byproduct' or strip the first token entirely if it represents any sort of Hungarian notation.</Issue>
+            </Message>
+            <Message Id="ID" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="Breaking">
+             <Issue Name="MemberAbbreviation" Certainty="85" Level="Error" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="ActiveInventoryCollection.cs" Line="595">Correct the casing of 'ID' in member name 'ActiveInventoryCollection.GetByProductID(int)' by changing it to 'Id'. 'Id' is an abbreviation and therefore is not subject to acronym casing guidelines.</Issue>
+             <Issue Name="MemberParameterAbbreviation" Certainty="85" Level="Error" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="ActiveInventoryCollection.cs" Line="595">In member 'ActiveInventoryCollection.GetByProductID(int)', correct the casing of 'ID' in parameter name 'ID' by changing it to 'id'. 'id' is an abbreviation and therefore is not subject to acronym casing guidelines.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetByUPCorSKU(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Error" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="ActiveInventoryCollection.cs" Line="578">Change 'List&lt;ActiveInventoryObject&gt;' in 'ActiveInventoryCollection.GetByUPCorSKU(string)' to use Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; or KeyedCollection&lt;K,V&gt;</Issue>
+            </Message>
+            <Message Id="SKU" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="ActiveInventoryCollection.cs" Line="578">Correct the casing of 'SKU' in member name 'ActiveInventoryCollection.GetByUPCorSKU(string)' by changing it to 'Sku'.</Issue>
+            </Message>
+            <Message Id="Cor" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="75" Level="CriticalWarning" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="ActiveInventoryCollection.cs" Line="578">Correct the spelling of 'Cor' in member name 'ActiveInventoryCollection.GetByUPCorSKU(string)' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ImportFromSpreadsheet(System.String)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalError" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="ActiveInventoryCollection.cs" Line="273">Modify 'ActiveInventoryCollection.ImportFromSpreadsheet(string)' to catch a more specific exception than 'Exception' or rethrow the exception.</Issue>
+             <Issue Certainty="95" Level="CriticalError" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="ActiveInventoryCollection.cs" Line="293">Modify 'ActiveInventoryCollection.ImportFromSpreadsheet(string)' to catch a more specific exception than 'Exception' or rethrow the exception.</Issue>
+             <Issue Certainty="95" Level="CriticalError" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="ActiveInventoryCollection.cs" Line="313">Modify 'ActiveInventoryCollection.ImportFromSpreadsheet(string)' to catch a more specific exception than 'Exception' or rethrow the exception.</Issue>
+             <Issue Certainty="95" Level="CriticalError" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="ActiveInventoryCollection.cs" Line="331">Modify 'ActiveInventoryCollection.ImportFromSpreadsheet(string)' to catch a more specific exception than 'Exception' or rethrow the exception.</Issue>
+             <Issue Certainty="95" Level="CriticalError" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="ActiveInventoryCollection.cs" Line="363">Modify 'ActiveInventoryCollection.ImportFromSpreadsheet(string)' to catch a more specific exception than 'Exception' or rethrow the exception.</Issue>
+             <Issue Certainty="95" Level="CriticalError" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="ActiveInventoryCollection.cs" Line="375">Modify 'ActiveInventoryCollection.ImportFromSpreadsheet(string)' to catch a more specific exception than 'Exception' or rethrow the exception.</Issue>
+            </Message>
+            <Message Id="data" TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="ActiveInventoryCollection.cs" Line="248">'ActiveInventoryCollection.ImportFromSpreadsheet(string)' declares a variable, 'data', of type 'string', which is never used or is only assigned to. Use this variable or remove it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ImportFromWebsiteBase(System.String)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalError" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="ActiveInventoryCollection.cs" Line="219">Modify 'ActiveInventoryCollection.ImportFromWebsiteBase(string)' to catch a more specific exception than 'Exception' or rethrow the exception.</Issue>
+             <Issue Certainty="95" Level="CriticalError" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="ActiveInventoryCollection.cs" Line="208">Modify 'ActiveInventoryCollection.ImportFromWebsiteBase(string)' to catch a more specific exception than 'object' or rethrow the exception.</Issue>
+            </Message>
+            <Message Id="data" TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="ActiveInventoryCollection.cs" Line="169">'ActiveInventoryCollection.ImportFromWebsiteBase(string)' declares a variable, 'data', of type 'string', which is never used or is only assigned to. Use this variable or remove it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ImportFromWebsiteOpenCart(System.String)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalError" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="ActiveInventoryCollection.cs" Line="135">Modify 'ActiveInventoryCollection.ImportFromWebsiteOpenCart(string)' to catch a more specific exception than 'Exception' or rethrow the exception.</Issue>
+             <Issue Certainty="95" Level="CriticalError" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="ActiveInventoryCollection.cs" Line="92">Modify 'ActiveInventoryCollection.ImportFromWebsiteOpenCart(string)' to catch a more specific exception than 'object' or rethrow the exception.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="ActiveInventoryObject" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#GetPriceEach(SBMLibrary.PricingModelObject)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="Selected" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="Breaking">
+             <Issue Name="MemberParameter" Certainty="85" Level="Error" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="ActiveInventoryObject.cs" Line="25">In member 'ActiveInventoryObject.GetPriceEach(PricingModelObject)', correct the casing of 'Selected' in parameter name 'SelectedPricingModel' by changing it to 'selected'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetTotalPrice(SBMLibrary.PricingModelObject)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="Selected" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="Breaking">
+             <Issue Name="MemberParameter" Certainty="85" Level="Error" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="ActiveInventoryObject.cs" Line="14">In member 'ActiveInventoryObject.GetTotalPrice(PricingModelObject)', correct the casing of 'Selected' in parameter name 'SelectedPricingModel' by changing it to 'selected'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#MSRP" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="MSRP" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="ActiveInventoryObject.cs" Line="478">Correct the casing of 'MSRP' in member name 'ActiveInventoryObject.MSRP' by changing it to 'Msrp'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#MSRPProperty" Kind="Field" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="MSRP" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error">Correct the casing of 'MSRP' in member name 'ActiveInventoryObject.MSRPProperty' by changing it to 'Msrp'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#PictureURL" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="URL" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="ActiveInventoryObject.cs" Line="293">Correct the casing of 'URL' in member name 'ActiveInventoryObject.PictureURL' by changing it to 'Url'.</Issue>
+            </Message>
+            <Message TypeName="UriPropertiesShouldNotBeStrings" Category="Microsoft.Design" CheckId="CA1056" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="Breaking">
+             <Issue Certainty="75" Level="Error" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="ActiveInventoryObject.cs" Line="293">Change the type of property 'ActiveInventoryObject.PictureURL' from string to System.Uri.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#PictureURLProperty" Kind="Field" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="URL" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error">Correct the casing of 'URL' in member name 'ActiveInventoryObject.PictureURLProperty' by changing it to 'Url'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ProductID" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="ID" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="Breaking">
+             <Issue Name="MemberAbbreviation" Certainty="85" Level="Error" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="ActiveInventoryObject.cs" Line="219">Correct the casing of 'ID' in member name 'ActiveInventoryObject.ProductID' by changing it to 'Id'. 'Id' is an abbreviation and therefore is not subject to acronym casing guidelines.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ProductIDProperty" Kind="Field" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="ID" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="Breaking">
+             <Issue Name="MemberAbbreviation" Certainty="85" Level="Error">Correct the casing of 'ID' in member name 'ActiveInventoryObject.ProductIDProperty' by changing it to 'Id'. 'Id' is an abbreviation and therefore is not subject to acronym casing guidelines.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#SKU" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="SKU" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="ActiveInventoryObject.cs" Line="331">Correct the casing of 'SKU' in member name 'ActiveInventoryObject.SKU' by changing it to 'Sku'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#SKUProperty" Kind="Field" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="SKU" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error">Correct the casing of 'SKU' in member name 'ActiveInventoryObject.SKUProperty' by changing it to 'Sku'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#SubscribeToChangeEvents(System.EventHandler`1&lt;SBMLibrary.ItemChangedEventArgs&gt;,System.EventHandler`1&lt;SBMLibrary.ItemChangedEventArgs&gt;)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="SKU" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="Breaking">
+             <Issue Name="MemberParameter" Certainty="85" Level="Error" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="ActiveInventoryObject.cs" Line="302">In member 'ActiveInventoryObject.SubscribeToChangeEvents(EventHandler&lt;ItemChangedEventArgs&gt;, EventHandler&lt;ItemChangedEventArgs&gt;)', correct the casing of 'SKU' in parameter name 'SKUChangedEvent' by changing it to 'sku'.</Issue>
+            </Message>
+            <Message Id="UPC" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="Breaking">
+             <Issue Name="MemberParameter" Certainty="85" Level="Error" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="ActiveInventoryObject.cs" Line="302">In member 'ActiveInventoryObject.SubscribeToChangeEvents(EventHandler&lt;ItemChangedEventArgs&gt;, EventHandler&lt;ItemChangedEventArgs&gt;)', correct the casing of 'UPC' in parameter name 'UPCChangedEvent' by changing it to 'upc'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#UnSubscribeToChangeEvents(System.EventHandler`1&lt;SBMLibrary.ItemChangedEventArgs&gt;,System.EventHandler`1&lt;SBMLibrary.ItemChangedEventArgs&gt;)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="UnSubscribe" TypeName="CompoundWordsShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1702" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="Breaking">
+             <Issue Name="MemberShouldBeDiscreteTerm" Certainty="80" Level="Error" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="ActiveInventoryObject.cs" Line="307">The compound word 'UnSubscribe' in member name 'ActiveInventoryObject.UnSubscribeToChangeEvents(EventHandler&lt;ItemChangedEventArgs&gt;, EventHandler&lt;ItemChangedEventArgs&gt;)' exists as a discrete term. If your usage is intended to be single word, case it as 'Unsubscribe' or strip the first token entirely if it represents any sort of Hungarian notation.</Issue>
+            </Message>
+            <Message Id="SKU" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="Breaking">
+             <Issue Name="MemberParameter" Certainty="85" Level="Error" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="ActiveInventoryObject.cs" Line="307">In member 'ActiveInventoryObject.UnSubscribeToChangeEvents(EventHandler&lt;ItemChangedEventArgs&gt;, EventHandler&lt;ItemChangedEventArgs&gt;)', correct the casing of 'SKU' in parameter name 'SKUChangedEvent' by changing it to 'sku'.</Issue>
+            </Message>
+            <Message Id="UPC" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="Breaking">
+             <Issue Name="MemberParameter" Certainty="85" Level="Error" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="ActiveInventoryObject.cs" Line="307">In member 'ActiveInventoryObject.UnSubscribeToChangeEvents(EventHandler&lt;ItemChangedEventArgs&gt;, EventHandler&lt;ItemChangedEventArgs&gt;)', correct the casing of 'UPC' in parameter name 'UPCChangedEvent' by changing it to 'upc'.</Issue>
+            </Message>
+            <Message Id="Un" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="ActiveInventoryObject.cs" Line="307">Correct the casing of 'Un' in member name 'ActiveInventoryObject.UnSubscribeToChangeEvents(EventHandler&lt;ItemChangedEventArgs&gt;, EventHandler&lt;ItemChangedEventArgs&gt;)' by changing it to 'UN'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#UPC" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="UPC" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="ActiveInventoryObject.cs" Line="107">Correct the casing of 'UPC' in member name 'ActiveInventoryObject.UPC' by changing it to 'Upc'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#UPCProperty" Kind="Field" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="UPC" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error">Correct the casing of 'UPC' in member name 'ActiveInventoryObject.UPCProperty' by changing it to 'Upc'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#WholeSalePrice" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="WholeSale" TypeName="CompoundWordsShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1702" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="Breaking">
+             <Issue Name="MemberShouldBeDiscreteTerm" Certainty="80" Level="Error" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="ActiveInventoryObject.cs" Line="459">The compound word 'WholeSale' in member name 'ActiveInventoryObject.WholeSalePrice' exists as a discrete term. If your usage is intended to be single word, case it as 'Wholesale' or strip the first token entirely if it represents any sort of Hungarian notation.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#WholeSalePriceProperty" Kind="Field" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="WholeSale" TypeName="CompoundWordsShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1702" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="Breaking">
+             <Issue Name="MemberShouldBeDiscreteTerm" Certainty="80" Level="Error">The compound word 'WholeSale' in member name 'ActiveInventoryObject.WholeSalePriceProperty' exists as a discrete term. If your usage is intended to be single word, case it as 'Wholesale' or strip the first token entirely if it represents any sort of Hungarian notation.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#SKUChanged" Kind="Event" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="SKU" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error">Correct the casing of 'SKU' in member name 'ActiveInventoryObject.SKUChanged' by changing it to 'Sku'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#UPCChanged" Kind="Event" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="UPC" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error">Correct the casing of 'UPC' in member name 'ActiveInventoryObject.UPCChanged' by changing it to 'Upc'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="BasePriceSelection" Kind="Enum" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#BasedOnBreakEven" Kind="Field" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="BreakEven" TypeName="CompoundWordsShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1702" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="Breaking">
+             <Issue Name="MemberShouldBeDiscreteTerm" Certainty="80" Level="Error">The compound word 'BreakEven' in member name 'BasePriceSelection.BasedOnBreakEven' exists as a discrete term. If your usage is intended to be single word, case it as 'Breakeven' or strip the first token entirely if it represents any sort of Hungarian notation.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#BasedOnMSRP" Kind="Field" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="MSRP" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error">Correct the casing of 'MSRP' in member name 'BasePriceSelection.BasedOnMSRP' by changing it to 'Msrp'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="Cache" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="TypeNamesShouldNotMatchNamespaces" Category="Microsoft.Naming" CheckId="CA1724" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="Breaking">
+           <Issue Name="System" Certainty="95" Level="Error">The type name 'Cache' conflicts in whole or in part with the namespace name 'System.Net.Cache' defined in the .NET Framework. Rename the type to eliminate the conflict.</Issue>
+          </Message>
+         </Messages>
+         <Members>
+          <Member Name="#DoVersionUpdateProcess()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="Cache.cs" Line="46">The 'this' parameter (or 'Me' in Visual Basic) of 'Cache.DoVersionUpdateProcess()' is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ReceiptIndex" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Accessors>
+            <Accessor Name="#set_ReceiptIndex(System.Object)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+             <Messages>
+              <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="NonBreaking">
+               <Issue Certainty="75" Level="Warning">'Cache.ReceiptIndex.set(object)' appears to have no upstream public or protected callers.</Issue>
+              </Message>
+             </Messages>
+            </Accessor>
+           </Accessors>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="Configuration" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="TypeNamesShouldNotMatchNamespaces" Category="Microsoft.Naming" CheckId="CA1724" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="Breaking">
+           <Issue Name="System" Certainty="95" Level="Error">The type name 'Configuration' conflicts in whole or in part with the namespace name 'System.Configuration' defined in the .NET Framework. Rename the type to eliminate the conflict.</Issue>
+          </Message>
+         </Messages>
+         <Members>
+          <Member Name="#BuildReceiptID()" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="ID" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="Breaking">
+             <Issue Name="MemberAbbreviation" Certainty="85" Level="Error" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="Configuration.cs" Line="18">Correct the casing of 'ID' in member name 'Configuration.BuildReceiptID()' by changing it to 'Id'. 'Id' is an abbreviation and therefore is not subject to acronym casing guidelines.</Issue>
+            </Message>
+            <Message Id="System.DateTime.ToString(System.String)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="Configuration.cs" Line="19">Because the behavior of 'DateTime.ToString(string)' could vary based on the current user's locale settings, replace this call in 'Configuration.BuildReceiptID()' with a call to 'DateTime.ToString(string, IFormatProvider)'. If the result of 'DateTime.ToString(string, IFormatProvider)' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+            <Message Id="System.String.Format(System.String,System.Object,System.Object,System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="Configuration.cs" Line="19">Because the behavior of 'string.Format(string, object, object, object)' could vary based on the current user's locale settings, replace this call in 'Configuration.BuildReceiptID()' with a call to 'string.Format(IFormatProvider, string, params object[])'. If the result of 'string.Format(IFormatProvider, string, params object[])' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetDataPath()" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="Breaking">
+             <Issue Certainty="50" Level="Warning" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="Configuration.cs" Line="86">Change 'Configuration.GetDataPath()' to a property if appropriate.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetDoApplicationShutdown()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="Breaking">
+             <Issue Certainty="50" Level="Warning" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="Configuration.cs" Line="103">Change 'Configuration.GetDoApplicationShutdown()' to a property if appropriate.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#OpenCartAdminURL" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="URL" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error">Correct the casing of 'URL' in member name 'Configuration.OpenCartAdminURL' by changing it to 'Url'.</Issue>
+            </Message>
+            <Message TypeName="UriPropertiesShouldNotBeStrings" Category="Microsoft.Design" CheckId="CA1056" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="Breaking">
+             <Issue Certainty="75" Level="Error">Change the type of property 'Configuration.OpenCartAdminURL' from string to System.Uri.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#OpenCartUsername" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="Username" TypeName="CompoundWordsShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1702" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="Breaking">
+             <Issue Name="MemberShouldBeCompoundWord" Certainty="80" Level="Error">The discrete term 'Username' in member name 'Configuration.OpenCartUsername' should be expressed as a compound word, 'UserName'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ProcessUPC(System.String)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="UPC" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="Configuration.cs" Line="48">Correct the casing of 'UPC' in member name 'Configuration.ProcessUPC(string)' by changing it to 'Upc'.</Issue>
+            </Message>
+            <Message Id="upc" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="Breaking">
+             <Issue Name="MemberParameter" Certainty="75" Level="CriticalWarning" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="Configuration.cs" Line="48">In method 'Configuration.ProcessUPC(string)', correct the spelling of 'upc' in parameter name 'upc' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ReceiptIDNumber" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="ID" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="Breaking">
+             <Issue Name="MemberAbbreviation" Certainty="85" Level="Error">Correct the casing of 'ID' in member name 'Configuration.ReceiptIDNumber' by changing it to 'Id'. 'Id' is an abbreviation and therefore is not subject to acronym casing guidelines.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#StationID" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="ID" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="Breaking">
+             <Issue Name="MemberAbbreviation" Certainty="85" Level="Error">Correct the casing of 'ID' in member name 'Configuration.StationID' by changing it to 'Id'. 'Id' is an abbreviation and therefore is not subject to acronym casing guidelines.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="FinancialObject" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#ReceiptID" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="ID" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="Breaking">
+             <Issue Name="MemberAbbreviation" Certainty="85" Level="Error">Correct the casing of 'ID' in member name 'FinancialObject.ReceiptID' by changing it to 'Id'. 'Id' is an abbreviation and therefore is not subject to acronym casing guidelines.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="FinancialObjectCollection" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#GetFinancial(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="ID" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="Breaking">
+             <Issue Name="MemberParameterAbbreviation" Certainty="85" Level="Error" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="FinancialObjectCollection.cs" Line="14">In member 'FinancialObjectCollection.GetFinancial(string)', correct the casing of 'ID' in parameter name 'receiptID' by changing it to 'Id'. 'Id' is an abbreviation and therefore is not subject to acronym casing guidelines.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="InventoryTransactionObject" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#ProductID" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="ID" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="Breaking">
+             <Issue Name="MemberAbbreviation" Certainty="85" Level="Error">Correct the casing of 'ID' in member name 'InventoryTransactionObject.ProductID' by changing it to 'Id'. 'Id' is an abbreviation and therefore is not subject to acronym casing guidelines.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ReceiptID" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="ID" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="Breaking">
+             <Issue Name="MemberAbbreviation" Certainty="85" Level="Error">Correct the casing of 'ID' in member name 'InventoryTransactionObject.ReceiptID' by changing it to 'Id'. 'Id' is an abbreviation and therefore is not subject to acronym casing guidelines.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#SKU" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="SKU" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error">Correct the casing of 'SKU' in member name 'InventoryTransactionObject.SKU' by changing it to 'Sku'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#UPC" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="UPC" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error">Correct the casing of 'UPC' in member name 'InventoryTransactionObject.UPC' by changing it to 'Upc'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="OpenCartConnector" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#.ctor()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalError" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="OpenCartConnector.cs" Line="52">Modify 'OpenCartConnector.OpenCartConnector()' to catch a more specific exception than 'Exception' or rethrow the exception.</Issue>
+            </Message>
+            <Message Id="System.String.Format(System.String,System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="OpenCartConnector.cs" Line="39">Because the behavior of 'string.Format(string, object)' could vary based on the current user's locale settings, replace this call in 'OpenCartConnector.OpenCartConnector()' with a call to 'string.Format(IFormatProvider, string, params object[])'. If the result of 'string.Format(IFormatProvider, string, params object[])' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+            <Message Id="System.String.EndsWith(System.String)" TypeName="SpecifyStringComparison" Category="Microsoft.Globalization" CheckId="CA1307" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="OpenCartConnector.cs" Line="25">Because the behavior of 'string.EndsWith(string)' could vary based on the current user's locale settings, replace this call in 'OpenCartConnector.OpenCartConnector()' with a call to 'string.EndsWith(string, StringComparison)'. If the result of 'string.EndsWith(string, StringComparison)' will be displayed to the user, such as when sorting a list of items for display in a list box, specify 'StringComparison.CurrentCulture' or 'StringComparison.CurrentCultureIgnoreCase' as the 'StringComparison' parameter. If comparing case-insensitive identifiers, such as file paths, environment variables, or registry keys and values, specify 'StringComparison.OrdinalIgnoreCase'. Otherwise, if comparing case-sensitive identifiers, specify 'StringComparison.Ordinal'.</Issue>
+            </Message>
+            <Message Id="System.String.IndexOf(System.String)" TypeName="SpecifyStringComparison" Category="Microsoft.Globalization" CheckId="CA1307" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="OpenCartConnector.cs" Line="47">Because the behavior of 'string.IndexOf(string)' could vary based on the current user's locale settings, replace this call in 'OpenCartConnector.OpenCartConnector()' with a call to 'string.IndexOf(string, StringComparison)'. If the result of 'string.IndexOf(string, StringComparison)' will be displayed to the user, such as when sorting a list of items for display in a list box, specify 'StringComparison.CurrentCulture' or 'StringComparison.CurrentCultureIgnoreCase' as the 'StringComparison' parameter. If comparing case-insensitive identifiers, such as file paths, environment variables, or registry keys and values, specify 'StringComparison.OrdinalIgnoreCase'. Otherwise, if comparing case-sensitive identifiers, specify 'StringComparison.Ordinal'.</Issue>
+            </Message>
+            <Message Id="System.String.IndexOf(System.String,System.Int32)" TypeName="SpecifyStringComparison" Category="Microsoft.Globalization" CheckId="CA1307" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="OpenCartConnector.cs" Line="48">Because the behavior of 'string.IndexOf(string, int)' could vary based on the current user's locale settings, replace this call in 'OpenCartConnector.OpenCartConnector()' with a call to 'string.IndexOf(string, int, StringComparison)'. If the result of 'string.IndexOf(string, int, StringComparison)' will be displayed to the user, such as when sorting a list of items for display in a list box, specify 'StringComparison.CurrentCulture' or 'StringComparison.CurrentCultureIgnoreCase' as the 'StringComparison' parameter. If comparing case-insensitive identifiers, such as file paths, environment variables, or registry keys and values, specify 'StringComparison.OrdinalIgnoreCase'. Otherwise, if comparing case-sensitive identifiers, specify 'StringComparison.Ordinal'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#UploadFilesToRemoteUrl(System.String,System.String,System.String,System.String,System.Collections.Specialized.NameValueCollection,System.String,System.String)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalError" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="OpenCartConnector.cs" Line="190">Modify 'OpenCartConnector.UploadFilesToRemoteUrl(string, string, string, string, NameValueCollection, string, string)' to catch a more specific exception than 'Exception' or rethrow the exception.</Issue>
+            </Message>
+            <Message Id="System.Int64.ToString(System.String)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="OpenCartConnector.cs" Line="102">Because the behavior of 'long.ToString(string)' could vary based on the current user's locale settings, replace this call in 'OpenCartConnector.UploadFilesToRemoteUrl(string, string, string, string, NameValueCollection, string, string)' with a call to 'long.ToString(string, IFormatProvider)'. If the result of 'long.ToString(string, IFormatProvider)' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+            <Message Id="System.String.Format(System.String,System.Object,System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="OpenCartConnector.cs" Line="128">Because the behavior of 'string.Format(string, object, object)' could vary based on the current user's locale settings, replace this call in 'OpenCartConnector.UploadFilesToRemoteUrl(string, string, string, string, NameValueCollection, string, string)' with a call to 'string.Format(IFormatProvider, string, params object[])'. If the result of 'string.Format(IFormatProvider, string, params object[])' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+            <Message Id="System.String.Format(System.String,System.Object,System.Object,System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="OpenCartConnector.cs" Line="141">Because the behavior of 'string.Format(string, object, object, object)' could vary based on the current user's locale settings, replace this call in 'OpenCartConnector.UploadFilesToRemoteUrl(string, string, string, string, NameValueCollection, string, string)' with a call to 'string.Format(IFormatProvider, string, params object[])'. If the result of 'string.Format(IFormatProvider, string, params object[])' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#UploadQuantityChanges()" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="System.DateTime.ToString(System.String)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="OpenCartConnector.cs" Line="74">Because the behavior of 'DateTime.ToString(string)' could vary based on the current user's locale settings, replace this call in 'OpenCartConnector.UploadQuantityChanges()' with a call to 'DateTime.ToString(string, IFormatProvider)'. If the result of 'DateTime.ToString(string, IFormatProvider)' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+            <Message Id="System.String.Format(System.String,System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="OpenCartConnector.cs" Line="74">Because the behavior of 'string.Format(string, object)' could vary based on the current user's locale settings, replace this call in 'OpenCartConnector.UploadQuantityChanges()' with a call to 'string.Format(IFormatProvider, string, params object[])'. If the result of 'string.Format(IFormatProvider, string, params object[])' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+            <Message Id="System.String.Format(System.String,System.Object,System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="OpenCartConnector.cs" Line="74">Because the behavior of 'string.Format(string, object, object)' could vary based on the current user's locale settings, replace this call in 'OpenCartConnector.UploadQuantityChanges()' with a call to 'string.Format(IFormatProvider, string, params object[])'. If the result of 'string.Format(IFormatProvider, string, params object[])' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="PricingModelObject" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#.cctor()" Kind="Method" Static="True" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="InitializeReferenceTypeStaticFieldsInline" Category="Microsoft.Performance" CheckId="CA1810" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="NonBreaking">
+             <Issue Certainty="90" Level="CriticalWarning" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="PricingModelObject.cs" Line="17">Initialize all static fields in 'PricingModelObject' when those fields are declared and remove the explicit static constructor.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetSalePrice(System.Decimal,System.Decimal,System.Decimal)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="BreakEven" TypeName="CompoundWordsShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1702" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="Breaking">
+             <Issue Name="MemberParameterShouldBeDiscreteTerm" Certainty="80" Level="Error" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="PricingModelObject.cs" Line="161">In member 'PricingModelObject.GetSalePrice(decimal, decimal, decimal)', the compound word 'BreakEven' in parameter name 'BreakEvenCost' exists as a discrete term. If your usage is intended to be single word, case it as 'Breakeven' or strip the first token entirely if it represents any sort of Hungarian notation.</Issue>
+            </Message>
+            <Message Id="Break" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="Breaking">
+             <Issue Name="MemberParameter" Certainty="85" Level="Error" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="PricingModelObject.cs" Line="161">In member 'PricingModelObject.GetSalePrice(decimal, decimal, decimal)', correct the casing of 'Break' in parameter name 'BreakEvenCost' by changing it to 'break'.</Issue>
+            </Message>
+            <Message Id="Selling" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="Breaking">
+             <Issue Name="MemberParameter" Certainty="85" Level="Error" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="PricingModelObject.cs" Line="161">In member 'PricingModelObject.GetSalePrice(decimal, decimal, decimal)', correct the casing of 'Selling' in parameter name 'SellingPrice' by changing it to 'selling'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="PricingRoundingOption" Kind="Enum" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#RoundUp" Kind="Field" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="RoundUp" TypeName="CompoundWordsShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1702" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="Breaking">
+             <Issue Name="MemberShouldBeDiscreteTerm" Certainty="80" Level="Error">The compound word 'RoundUp' in member name 'PricingRoundingOption.RoundUp' exists as a discrete term. If your usage is intended to be single word, case it as 'Roundup' or strip the first token entirely if it represents any sort of Hungarian notation.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="ReceiptCollection" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#SKUToItems" Kind="Field" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="Warning">It appears that field 'ReceiptCollection.SKUToItems' is never used or is only ever assigned to. Use this field or remove it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#TransactionDateToItems" Kind="Field" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="Warning">It appears that field 'ReceiptCollection.TransactionDateToItems' is never used or is only ever assigned to. Use this field or remove it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#UPCToItems" Kind="Field" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="Warning">It appears that field 'ReceiptCollection.UPCToItems' is never used or is only ever assigned to. Use this field or remove it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="ReceiptEntry" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#ReceiptID" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="ID" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="Breaking">
+             <Issue Name="MemberAbbreviation" Certainty="85" Level="Error">Correct the casing of 'ID' in member name 'ReceiptEntry.ReceiptID' by changing it to 'Id'. 'Id' is an abbreviation and therefore is not subject to acronym casing guidelines.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#SKU" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="SKU" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error">Correct the casing of 'SKU' in member name 'ReceiptEntry.SKU' by changing it to 'Sku'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#UPC" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="UPC" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error">Correct the casing of 'UPC' in member name 'ReceiptEntry.UPC' by changing it to 'Upc'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="TransactionCollection" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#ExportActivityToCSV()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="CSV" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="TransactionCollection.cs" Line="12">Correct the casing of 'CSV' in member name 'TransactionCollection.ExportActivityToCSV()' by changing it to 'Csv'.</Issue>
+            </Message>
+            <Message TypeName="Provide correct arguments to formatting methods" Category="Microsoft.Usage" CheckId="CA2241" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="DependsOnFix">
+             <Issue Name="MissingArgument" Certainty="75" Level="Warning" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="TransactionCollection.cs" Line="67">Method 'TransactionCollection.ExportActivityToCSV()' calls 'string.Format(string, params object[])' and does not provide an argument for format item "{0}". The provided format string is: '"{0} transactions had to be skipped because the product id is 0.\r\n\r\nFirst mak..."'</Issue>
+            </Message>
+            <Message Id="System.Int32.ToString" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="TransactionCollection.cs" Line="46">Because the behavior of 'int.ToString()' could vary based on the current user's locale settings, replace this call in 'TransactionCollection.ExportActivityToCSV()' with a call to 'int.ToString(IFormatProvider)'. If the result of 'int.ToString(IFormatProvider)' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="TransactionCollection.cs" Line="46">Because the behavior of 'int.ToString()' could vary based on the current user's locale settings, replace this call in 'TransactionCollection.ExportActivityToCSV()' with a call to 'int.ToString(IFormatProvider)'. If the result of 'int.ToString(IFormatProvider)' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="TransactionCollection.cs" Line="50">Because the behavior of 'int.ToString()' could vary based on the current user's locale settings, replace this call in 'TransactionCollection.ExportActivityToCSV()' with a call to 'int.ToString(IFormatProvider)'. If the result of 'int.ToString(IFormatProvider)' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="TransactionCollection.cs" Line="50">Because the behavior of 'int.ToString()' could vary based on the current user's locale settings, replace this call in 'TransactionCollection.ExportActivityToCSV()' with a call to 'int.ToString(IFormatProvider)'. If the result of 'int.ToString(IFormatProvider)' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+            <Message Id="System.String.Format(System.String,System.Object[])" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="TransactionCollection.cs" Line="67">Because the behavior of 'string.Format(string, params object[])' could vary based on the current user's locale settings, replace this call in 'TransactionCollection.ExportActivityToCSV()' with a call to 'string.Format(IFormatProvider, string, params object[])'. If the result of 'string.Format(IFormatProvider, string, params object[])' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="TransactionEngine" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#CloseDay(System.Decimal,System.Decimal,System.String)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="Cash" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="Breaking">
+             <Issue Name="MemberParameter" Certainty="85" Level="Error" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="TransactionEngine.cs" Line="216">In member 'TransactionEngine.CloseDay(decimal, decimal, string)', correct the casing of 'Cash' in parameter name 'CashOnHand' by changing it to 'cash'.</Issue>
+            </Message>
+            <Message Id="System.DateTime.ToString(System.String)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="TransactionEngine.cs" Line="269">Because the behavior of 'DateTime.ToString(string)' could vary based on the current user's locale settings, replace this call in 'TransactionEngine.CloseDay(decimal, decimal, string)' with a call to 'DateTime.ToString(string, IFormatProvider)'. If the result of 'DateTime.ToString(string, IFormatProvider)' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#CreatePDFCloseDayReport(System.Decimal,System.Decimal,System.Decimal,System.Decimal,System.Decimal,System.Decimal,System.Decimal,System.Int32,System.Int32,System.Decimal,System.Decimal,System.String,System.Collections.Generic.List`1&lt;SBMLibrary.FinancialObject&gt;,System.Collections.Generic.List`1&lt;SBMLibrary.InventoryTransactionObject&gt;)" Kind="Method" Static="True" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message Id="financials" TypeName="ReviewUnusedParameters" Category="Microsoft.Usage" CheckId="CA1801" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="TransactionEngine.cs" Line="339">Parameter 'financials' of 'TransactionEngine.CreatePDFCloseDayReport(decimal, decimal, decimal, decimal, decimal, decimal, decimal, int, int, decimal, decimal, string, List&lt;FinancialObject&gt;, List&lt;InventoryTransactionObject&gt;)' is never used. Remove the parameter or use it in the method body.</Issue>
+            </Message>
+            <Message Id="System.Decimal.ToString(System.String)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="TransactionEngine.cs" Line="381">Because the behavior of 'decimal.ToString(string)' could vary based on the current user's locale settings, replace this call in 'TransactionEngine.CreatePDFCloseDayReport(decimal, decimal, decimal, decimal, decimal, decimal, decimal, int, int, decimal, decimal, string, List&lt;FinancialObject&gt;, List&lt;InventoryTransactionObject&gt;)' with a call to 'decimal.ToString(string, IFormatProvider)'. If the result of 'decimal.ToString(string, IFormatProvider)' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="TransactionEngine.cs" Line="384">Because the behavior of 'decimal.ToString(string)' could vary based on the current user's locale settings, replace this call in 'TransactionEngine.CreatePDFCloseDayReport(decimal, decimal, decimal, decimal, decimal, decimal, decimal, int, int, decimal, decimal, string, List&lt;FinancialObject&gt;, List&lt;InventoryTransactionObject&gt;)' with a call to 'decimal.ToString(string, IFormatProvider)'. If the result of 'decimal.ToString(string, IFormatProvider)' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="TransactionEngine.cs" Line="387">Because the behavior of 'decimal.ToString(string)' could vary based on the current user's locale settings, replace this call in 'TransactionEngine.CreatePDFCloseDayReport(decimal, decimal, decimal, decimal, decimal, decimal, decimal, int, int, decimal, decimal, string, List&lt;FinancialObject&gt;, List&lt;InventoryTransactionObject&gt;)' with a call to 'decimal.ToString(string, IFormatProvider)'. If the result of 'decimal.ToString(string, IFormatProvider)' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="TransactionEngine.cs" Line="390">Because the behavior of 'decimal.ToString(string)' could vary based on the current user's locale settings, replace this call in 'TransactionEngine.CreatePDFCloseDayReport(decimal, decimal, decimal, decimal, decimal, decimal, decimal, int, int, decimal, decimal, string, List&lt;FinancialObject&gt;, List&lt;InventoryTransactionObject&gt;)' with a call to 'decimal.ToString(string, IFormatProvider)'. If the result of 'decimal.ToString(string, IFormatProvider)' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="TransactionEngine.cs" Line="393">Because the behavior of 'decimal.ToString(string)' could vary based on the current user's locale settings, replace this call in 'TransactionEngine.CreatePDFCloseDayReport(decimal, decimal, decimal, decimal, decimal, decimal, decimal, int, int, decimal, decimal, string, List&lt;FinancialObject&gt;, List&lt;InventoryTransactionObject&gt;)' with a call to 'decimal.ToString(string, IFormatProvider)'. If the result of 'decimal.ToString(string, IFormatProvider)' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="TransactionEngine.cs" Line="402">Because the behavior of 'decimal.ToString(string)' could vary based on the current user's locale settings, replace this call in 'TransactionEngine.CreatePDFCloseDayReport(decimal, decimal, decimal, decimal, decimal, decimal, decimal, int, int, decimal, decimal, string, List&lt;FinancialObject&gt;, List&lt;InventoryTransactionObject&gt;)' with a call to 'decimal.ToString(string, IFormatProvider)'. If the result of 'decimal.ToString(string, IFormatProvider)' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="TransactionEngine.cs" Line="404">Because the behavior of 'decimal.ToString(string)' could vary based on the current user's locale settings, replace this call in 'TransactionEngine.CreatePDFCloseDayReport(decimal, decimal, decimal, decimal, decimal, decimal, decimal, int, int, decimal, decimal, string, List&lt;FinancialObject&gt;, List&lt;InventoryTransactionObject&gt;)' with a call to 'decimal.ToString(string, IFormatProvider)'. If the result of 'decimal.ToString(string, IFormatProvider)' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="TransactionEngine.cs" Line="409">Because the behavior of 'decimal.ToString(string)' could vary based on the current user's locale settings, replace this call in 'TransactionEngine.CreatePDFCloseDayReport(decimal, decimal, decimal, decimal, decimal, decimal, decimal, int, int, decimal, decimal, string, List&lt;FinancialObject&gt;, List&lt;InventoryTransactionObject&gt;)' with a call to 'decimal.ToString(string, IFormatProvider)'. If the result of 'decimal.ToString(string, IFormatProvider)' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="TransactionEngine.cs" Line="412">Because the behavior of 'decimal.ToString(string)' could vary based on the current user's locale settings, replace this call in 'TransactionEngine.CreatePDFCloseDayReport(decimal, decimal, decimal, decimal, decimal, decimal, decimal, int, int, decimal, decimal, string, List&lt;FinancialObject&gt;, List&lt;InventoryTransactionObject&gt;)' with a call to 'decimal.ToString(string, IFormatProvider)'. If the result of 'decimal.ToString(string, IFormatProvider)' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="TransactionEngine.cs" Line="416">Because the behavior of 'decimal.ToString(string)' could vary based on the current user's locale settings, replace this call in 'TransactionEngine.CreatePDFCloseDayReport(decimal, decimal, decimal, decimal, decimal, decimal, decimal, int, int, decimal, decimal, string, List&lt;FinancialObject&gt;, List&lt;InventoryTransactionObject&gt;)' with a call to 'decimal.ToString(string, IFormatProvider)'. If the result of 'decimal.ToString(string, IFormatProvider)' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="TransactionEngine.cs" Line="420">Because the behavior of 'decimal.ToString(string)' could vary based on the current user's locale settings, replace this call in 'TransactionEngine.CreatePDFCloseDayReport(decimal, decimal, decimal, decimal, decimal, decimal, decimal, int, int, decimal, decimal, string, List&lt;FinancialObject&gt;, List&lt;InventoryTransactionObject&gt;)' with a call to 'decimal.ToString(string, IFormatProvider)'. If the result of 'decimal.ToString(string, IFormatProvider)' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+            <Message Id="System.Int32.ToString" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="TransactionEngine.cs" Line="423">Because the behavior of 'int.ToString()' could vary based on the current user's locale settings, replace this call in 'TransactionEngine.CreatePDFCloseDayReport(decimal, decimal, decimal, decimal, decimal, decimal, decimal, int, int, decimal, decimal, string, List&lt;FinancialObject&gt;, List&lt;InventoryTransactionObject&gt;)' with a call to 'int.ToString(IFormatProvider)'. If the result of 'int.ToString(IFormatProvider)' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="TransactionEngine.cs" Line="426">Because the behavior of 'int.ToString()' could vary based on the current user's locale settings, replace this call in 'TransactionEngine.CreatePDFCloseDayReport(decimal, decimal, decimal, decimal, decimal, decimal, decimal, int, int, decimal, decimal, string, List&lt;FinancialObject&gt;, List&lt;InventoryTransactionObject&gt;)' with a call to 'int.ToString(IFormatProvider)'. If the result of 'int.ToString(IFormatProvider)' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#CreateReceiveInventoryStagingReport(System.String,System.Int32)" Kind="Method" Static="True" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message Id="ls" TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="TransactionEngine.cs" Line="186">'TransactionEngine.CreateReceiveInventoryStagingReport(string, int)' declares a variable, 'ls', of type 'double', which is never used or is only assigned to. Use this variable or remove it.</Issue>
+            </Message>
+            <Message Id="System.Int32.ToString" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="TransactionEngine.cs" Line="210">Because the behavior of 'int.ToString()' could vary based on the current user's locale settings, replace this call in 'TransactionEngine.CreateReceiveInventoryStagingReport(string, int)' with a call to 'int.ToString(IFormatProvider)'. If the result of 'int.ToString(IFormatProvider)' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Post(System.Collections.Generic.ICollection`1&lt;SBMLibrary.ActiveInventoryObject&gt;,System.String,System.Decimal,System.Decimal,System.Decimal,SBMLibrary.PricingModelObject,System.Decimal,System.Decimal,System.String,System.Decimal,System.Decimal)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="Activity" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="Breaking">
+             <Issue Name="MemberParameter" Certainty="85" Level="Error" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="TransactionEngine.cs" Line="67">In member 'TransactionEngine.Post(ICollection&lt;ActiveInventoryObject&gt;, string, decimal, decimal, decimal, PricingModelObject, decimal, decimal, string, decimal, decimal)', correct the casing of 'Activity' in parameter name 'Activity' by changing it to 'activity'.</Issue>
+            </Message>
+            <Message Id="ID" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="Breaking">
+             <Issue Name="MemberParameterAbbreviation" Certainty="85" Level="Error" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="TransactionEngine.cs" Line="67">In member 'TransactionEngine.Post(ICollection&lt;ActiveInventoryObject&gt;, string, decimal, decimal, decimal, PricingModelObject, decimal, decimal, string, decimal, decimal)', correct the casing of 'ID' in parameter name 'receiptID' by changing it to 'Id'. 'Id' is an abbreviation and therefore is not subject to acronym casing guidelines.</Issue>
+            </Message>
+            <Message Id="US" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="Breaking">
+             <Issue Name="MemberParameter" Certainty="85" Level="Error" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="TransactionEngine.cs" Line="67">In member 'TransactionEngine.Post(ICollection&lt;ActiveInventoryObject&gt;, string, decimal, decimal, decimal, PricingModelObject, decimal, decimal, string, decimal, decimal)', correct the casing of 'US' in parameter name 'USStateOfSale' by changing it to 'us'.</Issue>
+            </Message>
+            <Message Id="totalSale" TypeName="ReviewUnusedParameters" Category="Microsoft.Usage" CheckId="CA1801" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="DependsOnFix">
+             <Issue Certainty="95" Level="Warning" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="TransactionEngine.cs" Line="67">Parameter 'totalSale' of 'TransactionEngine.Post(ICollection&lt;ActiveInventoryObject&gt;, string, decimal, decimal, decimal, PricingModelObject, decimal, decimal, string, decimal, decimal)' is never used. Remove the parameter or use it in the method body.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ReceiveInventory(System.Collections.Generic.ICollection`1&lt;SBMLibrary.ActiveInventoryObject&gt;,System.String)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="Activity" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="Breaking">
+             <Issue Name="MemberParameter" Certainty="85" Level="Error" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="TransactionEngine.cs" Line="13">In member 'TransactionEngine.ReceiveInventory(ICollection&lt;ActiveInventoryObject&gt;, string)', correct the casing of 'Activity' in parameter name 'Activity' by changing it to 'activity'.</Issue>
+            </Message>
+            <Message Id="ID" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="Breaking">
+             <Issue Name="MemberParameterAbbreviation" Certainty="85" Level="Error" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="TransactionEngine.cs" Line="13">In member 'TransactionEngine.ReceiveInventory(ICollection&lt;ActiveInventoryObject&gt;, string)', correct the casing of 'ID' in parameter name 'receiptID' by changing it to 'Id'. 'Id' is an abbreviation and therefore is not subject to acronym casing guidelines.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#WriteFinancialPage(PdfSharp.Pdf.PdfPage,System.Int32,System.Collections.Generic.List`1&lt;SBMLibrary.FinancialObject&gt;)" Kind="Method" Static="True" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="Warning" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="TransactionEngine.cs" Line="514">'TransactionEngine.WriteFinancialPage(PdfPage, int, List&lt;FinancialObject&gt;)' appears to have no upstream public or protected callers.</Issue>
+            </Message>
+            <Message Id="financials" TypeName="ReviewUnusedParameters" Category="Microsoft.Usage" CheckId="CA1801" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="TransactionEngine.cs" Line="514">Parameter 'financials' of 'TransactionEngine.WriteFinancialPage(PdfPage, int, List&lt;FinancialObject&gt;)' is never used. Remove the parameter or use it in the method body.</Issue>
+            </Message>
+            <Message Id="pageNumber" TypeName="ReviewUnusedParameters" Category="Microsoft.Usage" CheckId="CA1801" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="TransactionEngine.cs" Line="514">Parameter 'pageNumber' of 'TransactionEngine.WriteFinancialPage(PdfPage, int, List&lt;FinancialObject&gt;)' is never used. Remove the parameter or use it in the method body.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#WriteTransactionPage(PdfSharp.Pdf.PdfPage,System.Int32,System.Collections.Generic.List`1&lt;SBMLibrary.InventoryTransactionObject&gt;)" Kind="Method" Static="True" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message Id="pageNumber" TypeName="ReviewUnusedParameters" Category="Microsoft.Usage" CheckId="CA1801" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="TransactionEngine.cs" Line="465">Parameter 'pageNumber' of 'TransactionEngine.WriteTransactionPage(PdfPage, int, List&lt;InventoryTransactionObject&gt;)' is never used. Remove the parameter or use it in the method body.</Issue>
+            </Message>
+            <Message Id="System.DateTime.ToString(System.String)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="TransactionEngine.cs" Line="503">Because the behavior of 'DateTime.ToString(string)' could vary based on the current user's locale settings, replace this call in 'TransactionEngine.WriteTransactionPage(PdfPage, int, List&lt;InventoryTransactionObject&gt;)' with a call to 'DateTime.ToString(string, IFormatProvider)'. If the result of 'DateTime.ToString(string, IFormatProvider)' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+            <Message Id="System.Decimal.ToString(System.String)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="TransactionEngine.cs" Line="503">Because the behavior of 'decimal.ToString(string)' could vary based on the current user's locale settings, replace this call in 'TransactionEngine.WriteTransactionPage(PdfPage, int, List&lt;InventoryTransactionObject&gt;)' with a call to 'decimal.ToString(string, IFormatProvider)'. If the result of 'decimal.ToString(string, IFormatProvider)' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="TransactionEngine.cs" Line="503">Because the behavior of 'decimal.ToString(string)' could vary based on the current user's locale settings, replace this call in 'TransactionEngine.WriteTransactionPage(PdfPage, int, List&lt;InventoryTransactionObject&gt;)' with a call to 'decimal.ToString(string, IFormatProvider)'. If the result of 'decimal.ToString(string, IFormatProvider)' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+            <Message Id="System.Int32.ToString" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2014-05-31 20:23:41Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="TransactionEngine.cs" Line="503">Because the behavior of 'int.ToString()' could vary based on the current user's locale settings, replace this call in 'TransactionEngine.WriteTransactionPage(PdfPage, int, List&lt;InventoryTransactionObject&gt;)' with a call to 'int.ToString(IFormatProvider)'. If the result of 'int.ToString(IFormatProvider)' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="e:\Users\Russ\Documents\Visual Studio 2012\Projects\SmallBusinessManager\SBMLibrary" File="TransactionEngine.cs" Line="503">Because the behavior of 'int.ToString()' could vary based on the current user's locale settings, replace this call in 'TransactionEngine.WriteTransactionPage(PdfPage, int, List&lt;InventoryTransactionObject&gt;)' with a call to 'int.ToString(IFormatProvider)'. If the result of 'int.ToString(IFormatProvider)' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+     </Namespaces>
+    </Module>
+   </Modules>
+  </Target>
+ </Targets>
+ <Rules>
+  <Rule TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811">
+   <Name>Avoid uncalled private code</Name>
+   <Description>There is uncalled code that is not externally visible and is not a known runtime entry point. If this violation fires in error, please send a problem report to the Visual Studio Code Analysis team.</Description>
+   <Resolution Name="Default">{0} appears to have no upstream public or protected callers.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182264(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="performancerules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823">
+   <Name>Avoid unused private fields</Name>
+   <Description>Private fields were detected that do not appear to be accessed within the assembly. If this violation fires in error, please send a problem report to the Visual Studio Code Analysis team.</Description>
+   <Resolution Name="Default">It appears that field {0} is never used or is only ever assigned to. Use this field or remove it.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms245042(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="performancerules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="CompoundWordsShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1702">
+   <Name>Compound words should be cased correctly</Name>
+   <Description>Avoid creating compound words from terms which exist in the dictionary as discrete terms. Do not create a compound word such as 'StopWatch' or 'PopUp'. These terms are recognized in the dictionary and should be cased as 'Stopwatch' and 'Popup'.</Description>
+   <Resolution Name="MemberParameterShouldBeDiscreteTerm">In member {0}, the compound word '{1}' in parameter name {2} exists as a discrete term. If your usage is intended to be single word, case it as '{3}' or strip the first token entirely if it represents any sort of Hungarian notation.</Resolution>
+   <Resolution Name="MemberShouldBeCompoundWord">The discrete term '{0}' in member name {1} should be expressed as a compound word, '{2}'.</Resolution>
+   <Resolution Name="MemberShouldBeDiscreteTerm">The compound word '{0}' in member name {1} exists as a discrete term. If your usage is intended to be single word, case it as '{2}' or strip the first token entirely if it represents any sort of Hungarian notation.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/bb264474(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="80">Error</MessageLevel>
+   <File Name="namingrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031">
+   <Name>Do not catch general exception types</Name>
+   <Description>You should not catch Exception or SystemException. Catching generic exception types can hide run-time problems from the library user, and can complicate debugging. You should catch only those exceptions that you can handle gracefully.</Description>
+   <Resolution Name="Default">Modify {0} to catch a more specific exception than {1} or rethrow the exception.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182137(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">CriticalError</MessageLevel>
+   <File Name="designrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002">
+   <Name>Do not expose generic lists</Name>
+   <Description>Do not expose List&lt;T&gt; in object models. Use Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; or KeyedCollection&lt;K,V&gt; instead. List&lt;T&gt; is meant to be used from implementation, not in object model API. List&lt;T&gt; is optimized for performance at the cost of long term versioning. For example, if you return List&lt;T&gt; to the client code, you will not ever be able to receive notifications when client code modifies the collection.</Description>
+   <Resolution Name="Default">Change {0} in {1} to use Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; or KeyedCollection&lt;K,V&gt;</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182142(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="designrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709">
+   <Name>Identifiers should be cased correctly</Name>
+   <Description>Type, namespace, and member identifiers are Pascal-cased. Parameter identifiers are camel-cased. Two letter acronyms within these identifiers should be upper-cased, for example, use System.IO instead of System.Io. Acronyms of three or more letters should be Pascal-cased, for example, use System.Xml instead of System.XML. The pascal-casing convention capitalizes the first letter of each word, as in BackColor. The camel-casing convention formats the first letter of the first word in lowercase and capitalizes the first letter of all subsequent words, as in backgroundColor. Although it may be common practice for some two letter acronyms to not be fully capitalized, violations of this rule should not be excluded for this reason. For example, 'DbConnection', is common but incorrect; use DBConnection. A violation of this rule might be required for compatibility with existing, non-managed symbol schemes. In general, however, these symbols should not be visible outside the assembly that uses them.</Description>
+   <Resolution Name="Assembly">Correct the casing of '{0}' in assembly name {1} by changing it to '{2}'.</Resolution>
+   <Resolution Name="Member">Correct the casing of '{0}' in member name {1} by changing it to '{2}'.</Resolution>
+   <Resolution Name="MemberAbbreviation">Correct the casing of '{0}' in member name {1} by changing it to '{2}'. '{2}' is an abbreviation and therefore is not subject to acronym casing guidelines.</Resolution>
+   <Resolution Name="MemberParameter">In member {0}, correct the casing of '{1}' in parameter name {2} by changing it to '{3}'.</Resolution>
+   <Resolution Name="MemberParameterAbbreviation">In member {0}, correct the casing of '{1}' in parameter name {2} by changing it to '{3}'. '{3}' is an abbreviation and therefore is not subject to acronym casing guidelines.</Resolution>
+   <Resolution Name="Namespace">Correct the casing of '{0}' in namespace name '{1}' by changing it to '{2}'.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182240(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="85">Error</MessageLevel>
+   <File Name="namingrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704">
+   <Name>Identifiers should be spelled correctly</Name>
+   <Description>The individual words that make up an identifier should not be abbreviated and should be spelled correctly. If this rule generates a false positive on a term that should be recognized, add the word to the FxCop custom dictionary.</Description>
+   <Resolution Name="Member">Correct the spelling of '{0}' in member name {1} or remove it entirely if it represents any sort of Hungarian notation.</Resolution>
+   <Resolution Name="MemberParameter">In method {0}, correct the spelling of '{1}' in parameter name {2} or remove it entirely if it represents any sort of Hungarian notation.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/bb264492(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="75">CriticalWarning</MessageLevel>
+   <File Name="namingrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="InitializeReferenceTypeStaticFieldsInline" Category="Microsoft.Performance" CheckId="CA1810">
+   <Name>Initialize reference type static fields inline</Name>
+   <Description>Static fields should be initialized when declared. Initializing static data in explicit static constructors results in less performant code.</Description>
+   <Resolution Name="Default">Initialize all static fields in {0} when those fields are declared and remove the explicit static constructor.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182275(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="90">CriticalWarning</MessageLevel>
+   <File Name="performancerules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822">
+   <Name>Mark members as static</Name>
+   <Description>Methods which do not access instance data or call instance methods can be marked as static (Shared in Visual Basic). After doing so, the compiler will emit non-virtual call sites to these members which will prevent a check at runtime for each call that ensures the current object pointer is non-null. This can result in a measurable performance gain for performance-sensitive code. In some cases, the failure to access the current object instance represents a correctness issue.</Description>
+   <Resolution Name="Default">The 'this' parameter (or 'Me' in Visual Basic) of {0} is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms245046(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Warning</MessageLevel>
+   <File Name="performancerules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="Provide correct arguments to formatting methods" Category="Microsoft.Usage" CheckId="CA2241">
+   <Name>Provide correct arguments to formatting methods</Name>
+   <Description>Provide the correct number of arguments to String.Format calls.</Description>
+   <Resolution Name="MissingArgument">Method {0} calls {1} and does not provide an argument for format item {2}. The provided format string is: '{3}'</Resolution>
+   <Owner>RuleOwner</Owner>
+   <Url>http://msdn.microsoft.com/library/ms182361(VS.100).aspx</Url>
+   <Email />
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="dataflowrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804">
+   <Name>Remove unused locals</Name>
+   <Description>Remove locals that are not used or are only assigned to in method implementations.</Description>
+   <Resolution Name="Default">{0} declares a variable, {1}, of type {2}, which is never used or is only assigned to. Use this variable or remove it.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182278(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Warning</MessageLevel>
+   <File Name="performancerules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="ReviewUnusedParameters" Category="Microsoft.Usage" CheckId="CA1801">
+   <Name>Review unused parameters</Name>
+   <Description>Review parameters in non-virtual methods that are not used in the method body to ensure no correctness exists around failure to access them. Unused parameters incur maintenance and performance costs. Sometimes a violation of this rule can point to an implementation bug in the method (i.e. the parameter should actually have been used in the method body). Exclude warnings of this rule if the parameter has to exist because of backward compatibility.</Description>
+   <Resolution Name="Default">Parameter {0} of {1} is never used. Remove the parameter or use it in the method body.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182268(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Warning</MessageLevel>
+   <File Name="usagerules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305">
+   <Name>Specify IFormatProvider</Name>
+   <Description>If an overload exists that takes an IFormatProvider argument, it should always be called in favor of an overload that does not. Some methods in the runtime convert a value to or from a string representation and take a string parameter that contains one or more characters, called format specifiers, which indicate how the value is to be converted. If the meaning of the format specifier varies by culture, a formatting object supplies the actual characters used in the string representation. In scenarios where sorting and comparison behavior should never change between cultures, specify CultureInfo.InvariantCulture, otherwise, specify CultureInfo.CurrentCulture.</Description>
+   <Resolution Name="IFormatProviderAlternateString">Because the behavior of {0} could vary based on the current user's locale settings, replace this call in {1} with a call to {2}. If the result of {2} will be displayed to the user, specify {3} as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify {4}.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182190(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="globalizationrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="SpecifyStringComparison" Category="Microsoft.Globalization" CheckId="CA1307">
+   <Name>Specify StringComparison</Name>
+   <Description>If an overload exists that takes a StringComparison argument, it should always be called in favor of an overload that does not.</Description>
+   <Resolution Name="Default">Because the behavior of {0} could vary based on the current user's locale settings, replace this call in {1} with a call to {2}. If the result of {2} will be displayed to the user, such as when sorting a list of items for display in a list box, specify 'StringComparison.CurrentCulture' or 'StringComparison.CurrentCultureIgnoreCase' as the 'StringComparison' parameter. If comparing case-insensitive identifiers, such as file paths, environment variables, or registry keys and values, specify 'StringComparison.OrdinalIgnoreCase'. Otherwise, if comparing case-sensitive identifiers, specify 'StringComparison.Ordinal'.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/bb386080(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="globalizationrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="TypeNamesShouldNotMatchNamespaces" Category="Microsoft.Naming" CheckId="CA1724">
+   <Name>Type names should not match namespaces</Name>
+   <Description>Identifiers which conflict in whole or in part with namespace names should be avoided. Names that describe the purpose or contents of a type are preferred.</Description>
+   <Resolution Name="System">The type name {0} conflicts in whole or in part with the namespace name '{1}' defined in the .NET Framework. Rename the type to eliminate the conflict.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182257(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="namingrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="UriPropertiesShouldNotBeStrings" Category="Microsoft.Design" CheckId="CA1056">
+   <Name>URI properties should not be strings</Name>
+   <Description>If a property name contains "uri" or "url" or "urn" and it's typed as string, it should be changed to System.Uri.</Description>
+   <Resolution Name="Default">Change the type of property {0} from string to System.Uri.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182175(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="75">Error</MessageLevel>
+   <File Name="designrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024">
+   <Name>Use properties where appropriate</Name>
+   <Description>Properties should be used instead of Get/Set methods in most situations. Methods are preferable to properties in the following situations: the operation is a conversion, is expensive or has an observable side-effect; the order of execution is important; calling the member twice in succession creates different results; a member is static but returns a mutable value; or the member returns an array.</Description>
+   <Resolution Name="Default">Change {0} to a property if appropriate.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182181(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="designrules.dll" Version="11.0.0.0" />
+  </Rule>
+ </Rules>
+ <Localized>
+  <String Key="Category">Category</String>
+  <String Key="Certainty">Certainty</String>
+  <String Key="CollapseAll">Collapse All</String>
+  <String Key="CheckId">Check Id</String>
+  <String Key="Error">Error</String>
+  <String Key="Errors">error(s)</String>
+  <String Key="ExpandAll">Expand All</String>
+  <String Key="Help">Help</String>
+  <String Key="Line">Line</String>
+  <String Key="Messages">message(s)</String>
+  <String Key="LocationNotStoredInPdb">[Location not stored in Pdb]</String>
+  <String Key="Project">Project</String>
+  <String Key="Resolution">Resolution</String>
+  <String Key="Rule">Rule</String>
+  <String Key="RuleFile">Rule File</String>
+  <String Key="RuleDescription">Rule Description</String>
+  <String Key="Source">Source</String>
+  <String Key="Status">Status</String>
+  <String Key="Target">Target</String>
+  <String Key="Warning">Warning</String>
+  <String Key="Warnings">warning(s)</String>
+  <String Key="ReportTitle">Code Analysis Report</String>
+ </Localized>
+</FxCopReport>

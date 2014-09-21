@@ -1,0 +1,13 @@
+..\SmallBusinessManager\bin\Debug\FoxOnePOS.exe
+..\SmallBusinessManager\bin\Debug\FoxOnePOS.exe.config
+..\SmallBusinessManager\bin\Debug\log4net.dll
+..\SmallBusinessManager\bin\Debug\LumenWorks.Framework.IO.dll
+..\SmallBusinessManager\bin\Debug\PdfSharp-WPF.dll
+..\SmallBusinessManager\bin\Debug\Readme.txt
+..\SmallBusinessManager\bin\Debug\RussLibrary.Controls.dll
+..\SmallBusinessManager\bin\Debug\RussLibrary.dll
+..\SmallBusinessManager\bin\Debug\RussLibrary.Helpers.Log4Net.dll
+..\SmallBusinessManager\bin\Debug\RussLibrary.Web.dll
+..\SmallBusinessManager\bin\Debug\SBMLibrary.Controls.dll
+..\SmallBusinessManager\bin\Debug\SBMLibrary.dll
+..\SmallBusinessManager\bin\Debug\SharpCompress.dll

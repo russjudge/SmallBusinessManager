@@ -1,0 +1,235 @@
+﻿<UserControl x:Class="SBMLibrary.Controls.ReceiveInventory"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:ValueConvert="clr-namespace:RussLibrary.Controls.ValueConverters;assembly=RussLibrary.Controls"
+             xmlns:ctl="clr-namespace:RussLibrary.Controls;assembly=RussLibrary.Controls"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:localConvert="clr-namespace:SBMLibrary.Controls.ValueConverters"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             Name="uc1"
+             MinHeight="300"
+             GotFocus="OnGotFocus"
+             Loaded="OnLoaded"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+
+        <localConvert:OrderEntryTotal x:Key="OrderEntryTotal" />
+    </UserControl.Resources>
+    <DockPanel>
+        <Grid DockPanel.Dock="Top">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition Width="6*" />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Button Grid.Row="0"
+                    Grid.Column="0"
+                    Click="OnStageForExport"
+                    Content="Stage for Export" />
+
+            <Label Grid.Row="1"
+                   Grid.Column="0"
+                   HorizontalAlignment="Right"
+                   Content="Receipt ID:"
+                   FontWeight="Bold" />
+            <TextBlock Grid.Row="1"
+                       Grid.Column="1"
+                       VerticalAlignment="Center"
+                       Text="{Binding ReceiptID,
+                                      Mode=OneWay,
+                                      ElementName=uc1}" />
+
+            <StackPanel Grid.Row="0"
+                        Grid.Column="3"
+                        Orientation="Horizontal" />
+            <Label Grid.Row="0"
+                   Grid.Column="3"
+                   HorizontalAlignment="Right"
+                   Content="Quantity:" />
+            <TextBox Grid.Row="0"
+                     Grid.Column="4"
+                     Text="{Binding Path=Quantity,
+                                    Mode=TwoWay,
+                                    ElementName=uc1}" />
+            <StackPanel Grid.Row="1"
+                        Grid.Column="3"
+                        Orientation="Horizontal" />
+
+            <Label Grid.Row="1"
+                   Grid.Column="3"
+                   HorizontalAlignment="Right"
+                   Content="UPC or SKU:" />
+            <TextBox Name="txtSearchX"
+                     Grid.Row="1"
+                     Grid.Column="4"
+                     KeyDown="OnUPCKeyDown"
+                     Text="{Binding Path=SearchKey,
+                                    Mode=TwoWay,
+                                    ElementName=uc1,
+                                    UpdateSourceTrigger=PropertyChanged}" />
+
+            <Button Grid.Row="2"
+                    Grid.Column="4"
+                    Click="OnAdd"
+                    Content="Add"
+                    IsDefault="True" />
+        </Grid>
+        <DockPanel DockPanel.Dock="Bottom">
+
+            <Button Click="OnCancel"
+                    Content="Cancel"
+                    DockPanel.Dock="Left"
+                    Padding="5,5,5,5" />
+            <Button Click="OnPost"
+                    Content="Post"
+                    DockPanel.Dock="Right"
+                    FontSize="24"
+                    FontWeight="Bold" />
+            <TextBlock />
+        </DockPanel>
+        <ScrollViewer DockPanel.Dock="Top" HorizontalScrollBarVisibility="Auto">
+            <ListView VerticalAlignment="Stretch" ItemsSource="{Binding Activity, Mode=OneWay, ElementName=uc1}">
+
+                <ListView.View>
+
+                    <GridView>
+                        <GridViewColumn Width="70">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Button Click="OnDelete"
+                                                CommandParameter="{Binding}"
+                                                Content="X" />
+                                    </StackPanel>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Width="120">
+
+                            <GridViewColumn.HeaderTemplate>
+                                <DataTemplate>
+                                    <TextBlock VerticalAlignment="Center"
+                                               FontWeight="Bold"
+                                               Text="UPC" />
+                                </DataTemplate>
+
+                            </GridViewColumn.HeaderTemplate>
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Margin="2"
+                                                   VerticalAlignment="Center"
+                                                   Text="{Binding UPC}" />
+                                    </StackPanel>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+
+                        <GridViewColumn Width="120">
+
+                            <GridViewColumn.HeaderTemplate>
+                                <DataTemplate>
+                                    <TextBlock VerticalAlignment="Center"
+                                               FontWeight="Bold"
+                                               Text="SKU" />
+                                </DataTemplate>
+
+                            </GridViewColumn.HeaderTemplate>
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Margin="2"
+                                                   VerticalAlignment="Center"
+                                                   Text="{Binding SKU}" />
+                                    </StackPanel>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Width="320">
+
+                            <GridViewColumn.HeaderTemplate>
+                                <DataTemplate>
+                                    <TextBlock VerticalAlignment="Center"
+                                               FontWeight="Bold"
+                                               Text="Name" />
+                                </DataTemplate>
+
+                            </GridViewColumn.HeaderTemplate>
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Margin="2"
+                                                   VerticalAlignment="Center"
+                                                   Text="{Binding Name}" />
+                                    </StackPanel>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+
+
+                        <GridViewColumn Width="70">
+
+                            <GridViewColumn.HeaderTemplate>
+                                <DataTemplate>
+                                    <TextBlock VerticalAlignment="Center"
+                                               FontWeight="Bold"
+                                               Text="Quantity" />
+                                </DataTemplate>
+
+                            </GridViewColumn.HeaderTemplate>
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <ctl:DecimalBox Margin="2"
+                                                        VerticalAlignment="Center"
+                                                        Value="{Binding Path=Quantity,
+                                                                        Mode=TwoWay}" />
+                                    </StackPanel>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+
+
+
+                        <GridViewColumn x:Name="PART_wholesale" Width="160">
+
+                            <GridViewColumn.HeaderTemplate>
+                                <DataTemplate>
+                                    <TextBlock VerticalAlignment="Center"
+                                               FontWeight="Bold"
+                                               Text="Wholesale Cost" />
+                                </DataTemplate>
+
+                            </GridViewColumn.HeaderTemplate>
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <ctl:DecimalBox Width="{Binding Width,
+                                                                        ElementName=PART_wholesale}"
+                                                        Margin="2"
+                                                        HorizontalAlignment="Right"
+                                                        VerticalAlignment="Center"
+                                                        DisplayFormat="C"
+                                                        Value="{Binding Path=WholeSalePrice,
+                                                                        Mode=TwoWay}" />
+                                    </StackPanel>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+
+
+
+                    </GridView>
+                </ListView.View>
+
+            </ListView>
+        </ScrollViewer>
+    </DockPanel>
+</UserControl>
